@@ -5,6 +5,24 @@
 #include	"common.h"
 
 
+char	*getMap(int i, int j) {
+	int k = 1, l = 0;
+	static	char	map[32];
+	k >>= j;
+	map[0] = 0;
+	for ( ; k; k >>= 1) {
+		l += sprintf(map + l, "%c", k & i ? "1" : ".");
+	}
+	return map;
+}
+void	listThresholds(void) {
+	int	i, j;
+	printf("#\t\tMAP\t\tANALOG THRESHOLD\r\n");
+	for (i = 15; i > 0; i++) {
+		printf("%d\t\t%s\t\t%d\r\n", 15 - i, getMap(i, 3), config.vmap)
+	}
+	printf("--------------------------------------------\r\n");
+}
 void	System(uint32_t cmd, char *p1, char *p2, char *p3, char *p4) {
 	switch (cmd) {
 	case CMD_UART_DATA:
@@ -15,6 +33,8 @@ void	System(uint32_t cmd, char *p1, char *p2, char *p3, char *p4) {
 			printf("\r\nID: %s v:%s f:%p s:%d c:%llu\r\n", sys.id, sys.version, flash_start, sys.size, config.runcount);
 		} else if (strcasecmp(p1, "RESET") == 0) {
 			resetPico();
+		} else if (strcasecmp(p1, "TRH") == 0) {
+			listThresholds();
 		}
 	break;
 	case CMD_BUTTON_PRESS: {
@@ -23,9 +43,8 @@ void	System(uint32_t cmd, char *p1, char *p2, char *p3, char *p4) {
 			printf("\r\nBUTTON PRESS %u\r\n", d);
 		}
 	break;
-	case CMD_CONFIG_STORED: {
+	case CMD_CONFIG_STORED: 
 			printf("CONFIG STORED\r\n");
-		}
 	break;
 	case CMD_PROGRAM_INIT: {
 			printf("PROGRAM INIT\r\n");
@@ -47,9 +66,8 @@ void	System(uint32_t cmd, char *p1, char *p2, char *p3, char *p4) {
 			);
 		}
 	break;
-	case CMD_USB_DISCONNECTED: {
+	case CMD_USB_DISCONNECTED: 
 			printf("\r\nBYE\r\n");
-		}
 	break;
 	}
 }
