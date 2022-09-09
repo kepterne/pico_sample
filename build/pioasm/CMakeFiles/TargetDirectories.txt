@@ -1,0 +1,3 @@
+/Users/ekremkaracan/pico/seatsensor/build/pioasm/CMakeFiles/pioasm.dir
+/Users/ekremkaracan/pico/seatsensor/build/pioasm/CMakeFiles/edit_cache.dir
+/Users/ekremkaracan/pico/seatsensor/build/pioasm/CMakeFiles/rebuild_cache.dir
