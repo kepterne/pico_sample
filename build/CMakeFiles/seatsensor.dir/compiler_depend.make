@@ -3102,7 +3102,10 @@ CMakeFiles/seatsensor.dir/seatsensor.c.obj: /Users/ekremkaracan/pico/seatsensor/
   /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/ioqspi.h \
   /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_qspi.h \
   /Users/ekremkaracan/pico/seatsensor/version.h \
-  /Users/ekremkaracan/pico/seatsensor/common.h
+  /Users/ekremkaracan/pico/seatsensor/common.h \
+  /Users/ekremkaracan/pico/pico-sdk/src/rp2_common/hardware_adc/include/hardware/adc.h \
+  /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/adc.h \
+  /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/adc.h
 
 
 /Users/ekremkaracan/pico/seatsensor/common.h:
