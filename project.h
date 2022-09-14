@@ -10,6 +10,9 @@
 #include	"hardware/structs/ioqspi.h"
 #include	"hardware/structs/sio.h"
 
+
+//#define	DEBUG	1
+
 #define	VERSION_MAJOR	1
 #define	VERSION_MINOR	0
 
@@ -30,25 +33,25 @@ typedef	struct {
 
 #ifdef	main_c
 		StoredConfig	config = {
-			"MagickcigaM",
-			{16, 18, 17},
+			"MagicKcigaM",
+			{18, 17, 16},
 			{
-				1040,				// 1 1 1 1
-				990,				// 1 1 1 0
-				930,				// 1 1 0 1                                             
-				870,				// 1 1 0 0
-				800,				// 1 0 1 1
-				730,				// 1 0 1 0
-				650,				// 1 0 0 1
-				560,				// 1 0 0 0
-				500,				// 0 1 1 1
-				430,				// 0 1 1 0
-				360,				// 0 1 0 1
-				310,				// 0 1 0 0
-				220,				// 0 0 1 1
-				140,				// 0 0 1 0
-				110,				// 0 0 0 1
-				0				// 0 0 0 0
+				1040, // 1111
+				1000, // 1110
+				950,
+				890,
+				830,
+				760,
+				690,
+				620,
+				550,
+				490,
+				420,
+				340,
+				260,
+				185,
+				95,
+				0
 			}
 		};
 #else

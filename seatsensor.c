@@ -7,6 +7,7 @@
 #include "hardware/gpio.h"
 #include "hardware/adc.h"
 
+
 char	map[32];
 char	*getMap(int i, int j) {
 	int k = 1, l = 0;
@@ -25,20 +26,25 @@ void	listThresholds(void) {
 	}
 	printf("--------------------------------------------\r\n");
 }
-void	selectChannel(int idx) {
+void	selectChannel(int idx, int verbose) {
 	int	i;
-	printf("\r\nSelecting channel %d\r\n", idx);
+	if (verbose)
+		printf("\r\nSelecting channel %d\r\n", idx);
 	for (i = 0; i < 3; i++) {
 		gpio_init(config.ports[i]);
       	gpio_set_dir(config.ports[i], GPIO_OUT);
       	
 		if (idx & (1 << i)) {
 			gpio_put(config.ports[i], 1);
-			printf("GPIO%02d ", config.ports[i]);
+			if (verbose)
+				printf("GPIO%02d ", config.ports[i]);
 		} else
 			gpio_put(config.ports[i], 0);
 	}
-	printf("\r\n----------------------------\r\n");
+	if (verbose)
+		printf("\r\n----------------------------\r\n");
+//	adc_init();
+	adc_select_input(2);
 }
 int	readn = 0;
 void	System(uint32_t cmd, char *p1, char *p2, char *p3, char *p4) {
@@ -48,12 +54,14 @@ void	System(uint32_t cmd, char *p1, char *p2, char *p3, char *p4) {
 		if (sscanf(p1, "ECHO %d", &config.echo) == 1) {
 			printf("\r\nECHO: %s\r\n", config.echo ? "ON" : "OFF");
 			UpdateConfig(&sys);
+		} else if (strcasecmp(p1, "CLR") == 0) {
+			printf("\r\n\x1B[2J");
 		} else if (strcasecmp(p1, "ID") == 0) {
-			printf("\r\nID: %s v:%s f:%p s:%d c:%llu\r\n", sys.id, sys.version, flash_start, sys.size, config.runcount);
+			printf("\r\nJID: %s v:%s f:%p s:%d c:%llu\r\n", sys.id, sys.version, flash_start, sys.size, config.runcount);
 		} else if (strcasecmp(p1, "RESET") == 0) {
 			resetPico();
 		} else if (strcasecmp(p1, "TRH") == 0) {
-			listThresholds();
+				listThresholds();
 		} else if (sscanf(p1, "TRH %d %d", &idx, &val) == 2) {
 			if (idx < 16 && idx >= 0) {
 				config.vmap[idx] = val;
@@ -61,8 +69,11 @@ void	System(uint32_t cmd, char *p1, char *p2, char *p3, char *p4) {
 				listThresholds();
 			}
 		} else if (sscanf(p1, "READ %d %d", &idx, &val) == 2) {
-			selectChannel(idx);
-			readn = val;
+		/*	adc_init();
+			adc_gpio_init(28);
+			adc_select_input(2);
+			selectChannel(idx, 1);
+		*/	readn = val;
 		}
 	}
 	break;
@@ -77,12 +88,16 @@ void	System(uint32_t cmd, char *p1, char *p2, char *p3, char *p4) {
 	break;
 	case CMD_PROGRAM_INIT: {
 			printf("PROGRAM INIT\r\n");
-			adc_init();
+			sys.usb_ack = 0;
+	
+		/*	adc_init();
 			adc_gpio_init(28);
 			adc_select_input(2);
+		*/
 		}
 	break;
 	case CMD_USB_CONNECTED: {
+#ifndef	DEBUG
 			printf(
 				"WELCOME\r\n"
 					"\tID.........: %s\r\n"
@@ -96,6 +111,10 @@ void	System(uint32_t cmd, char *p1, char *p2, char *p3, char *p4) {
 				config.runcount,
 				config.echo ? "ON" : "OFF"
 			);
+			sys.usb_ack = 1;
+#else
+
+#endif
 		}
 	break;
 	case CMD_USB_DISCONNECTED: 
@@ -103,17 +122,99 @@ void	System(uint32_t cmd, char *p1, char *p2, char *p3, char *p4) {
 	break;
 	}
 }
+#define	MAX_READING	32
 
+int	peaks[16]; 
+int	reading[16];
+
+int	MeasureADC(int idx) {
+	selectChannel(idx, 0);
+	
+	sleep_ms(1);
+	int	avg = 0, value = 0;
+	for (int k = 0; k < MAX_READING; k++) {
+		value = adc_read();
+		avg += value;
+	}
+	avg /= MAX_READING;
+	if (ABSDIFF(peaks[idx], avg) > 3) {
+		int		K = 15;
+		peaks[idx] = avg;
+		for (int i = 0; i < 15; i++, K--) {
+			if (avg >= config.vmap[i]) {
+				break;
+			}
+		}
+		if (reading[idx] != K) {
+			reading[idx] = K;
+		#ifndef	DEBUG	
+			return K;
+		#endif
+		}
+	}
+#ifdef	DEBUG
+	return reading[idx];
+#else
+	return -1;
+#endif
+}
 int	main(void) {
+	uint32_t	owner;
+	uint64_t	seconds = 0;
 	initSys(&sys, System);
+	adc_init();
+	adc_gpio_init(28);
+
+//	adc_set_temp_sensor_enabled(true); // Enable on board temp sensor
+    
+	
+//	sleep_ms(100);
 	for ( ; ; ) {
 		loopSys(&sys);
+#ifdef	DEBUG
+		sleep_ms(10);
 		if (readn) {
-			int	adc = adc_read();
-			printf("\r%12d            \r", adc);
-			readn--;
-			if (readn <= 0)
-				printf("\r\nREAD DONE\r\n");
+			printf("\r");
+			// \033[<N>A
+			for (int i = 0; i < 8; i++) {
+				int	v = MeasureADC2(i);
+				if (i == 4)
+					printf("\r\n");
+				printf("%2d: %4d %2d, ", i, peaks[i], 15 - v);
+				//printf("%2d: %6d [%2d], ", i, v, 15 - reading[i]);
+			}
+			printf("\r");
+			printf("\033[1A");
+		}	
+#else
+		if (sys.seconds == seconds) {
+			int	v;
+			float temp = 0;
+			/*adc_select_input(4);
+			const float conversion_factor = 3.3f / (1 << 12);
+			float result = adc_read() * conversion_factor;
+			float temp = 27 - (result - 0.706)/0.001721;
+			*/
+			seconds += 5;
+			sys.internal_temp = temp;
+			printf("~version(%s) id(%s) seconds(%llu) temp(%f)~\r\n",
+			 	sys.version,
+				sys.id,
+				sys.seconds,
+				sys.internal_temp
+			);
+			for (int i = 0; i < 8; i++) {
+				reading[i] = -100;
+				peaks[i] = -100;
+			}
+			
+		} 
+		for (int i = 0; i < 8; i++) {
+			int	v = MeasureADC(i);
+			if (v >= 0)
+				printf("~analog(%d %s)~\r\n", i, getMap(v, 4));
+				//printf("%2d: %6d [%2d], ", i, v, 15 - reading[i]);
 		}
-    }
+#endif
+	}
 }

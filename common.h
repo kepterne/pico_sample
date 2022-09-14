@@ -1,6 +1,8 @@
 #ifndef	common_h
 #define	common_h
 
+#define	ABSDIFF(x, y)	((x) > (y) ? (x) - (y) : (y) - (x))
+
 #define	CMD_PROGRAM_INIT		0x0001
 #define	CMD_CONFIG_STORED		0x0002
 #define	CMD_BUTTON_PRESS		0x0003
@@ -17,6 +19,8 @@ typedef	struct {
 	int		bootsel;
 	uint64_t	bootsel_start;
 	uint64_t	usb_connected;
+	uint8_t	usb_ack;
+	float		internal_temp;
 	void		(*cb)(uint32_t, char *, char *, char *, char *);
 } SystemConfig;
 

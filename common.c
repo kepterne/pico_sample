@@ -2,11 +2,10 @@
 #include	"pico/bootrom.h"
 #include	"hardware/watchdog.h"
 #include	<hardware/flash.h>
+#include	"hardware/adc.h"
 
 #include	"project.h"
 #include	"common.h"
-
-
 
 
 bool __no_inline_not_in_flash_func(get_bootsel_button)() {
@@ -80,12 +79,19 @@ void	UpdateConfig(SystemConfig *s) {
 void	initSys(SystemConfig *s, void (*f)(uint32_t, char *, char *, char *, char *)) {
 	StoredConfig	*sc;
 	char	*pp;
+#ifndef	DEBUG
+	stdio_uart_init_full(uart1, 115200, 4, 5);
+#else
 	stdio_init_all();
-	s->usb_connected = 0;
-	s->ustart = time_us_64();
+#endif
 	sleep_ms(100);
+	s->usb_connected = 0;
+	s->usb_ack = 0;
+	s->ustart = time_us_64();
 	s->cb = f;
 	s->bootsel = 0;
+	s->bootsel_start = 0;
+	s->usb_connected = 0;
 	GetBoardID(s->id);
 	gpio_init(PICO_DEFAULT_LED_PIN);
    	gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
@@ -112,6 +118,8 @@ void	initSys(SystemConfig *s, void (*f)(uint32_t, char *, char *, char *, char *
 }
 
 void	resetPico(void) {
+	initSys(&sys, sys.cb);
+	//sys.usb_ack = 0;
 	watchdog_reboot(0, 0, 0);
 }
 
@@ -146,6 +154,7 @@ void	LoopButton(SystemConfig *s) {
 }
 
 
+#ifdef DEBUG
 char		line[512];
 int		linec = 0;
 int		readon = 0;
@@ -164,13 +173,13 @@ void  processLine(char *p, int l) {
 
 void	input_loop(void) {
 	int		c;
-	
 	if ((c = getchar_timeout_us(0)) != PICO_ERROR_TIMEOUT) {		
-		if (!sys.usb_connected && c == 13) {
+		if (!sys.usb_ack) {
+			printf("\r\n\033[2J%s > ", sys.id);
 			if (sys.cb)
 				(*sys.cb)(CMD_USB_CONNECTED, NULL, NULL, NULL, NULL);
+			//Esc[2J printf("\r\n\x1B[2J");
 			
-			printf("\r\n%s > ", sys.id);
 		}
 		sys.usb_connected = sys.unow;
 		if (config.echo)
@@ -194,16 +203,31 @@ void	input_loop(void) {
 	} else if (sys.usb_connected) {
 		if ((sys.unow - sys.usb_connected) > 10000000) {
 			sys.usb_connected = 0;
+			sys.usb_ack = 0;
 			if (sys.cb)
 				(*sys.cb)(CMD_USB_DISCONNECTED, NULL, NULL, NULL, NULL);
 		}
 	}
 }
 
+#endif
 
 void	loopSys(SystemConfig *s) {
 	s->unow = time_us_64();
 	s->seconds = (s->unow - s->ustart) / 1000000;
+	/*
+	adc_select_input(4);
+	uint16_t raw = adc_read();
+	const float conversion_factor = 3.3f / (1 << 12);
+	float result = raw * conversion_factor;
+	float temp = 27 - (result - 0.706)/0.001721;
+	if (ABSDIFF(s->internal_temp, temp) > 0.2) {
+		s->internal_temp = temp;
+		//printf("\r\nTemp = %f C\r\n", temp);  
+	}
+*/
 	LoopButton(s);
+#ifdef	DEBUG
 	input_loop();
+#endif
 }

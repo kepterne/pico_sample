@@ -2966,6 +2966,19 @@ CMakeFiles/seatsensor.dir/common.c.obj: /Users/ekremkaracan/pico/seatsensor/comm
   /Users/ekremkaracan/pico/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/watchdog.h \
   /Users/ekremkaracan/pico/pico-sdk/src/rp2_common/hardware_flash/include/hardware/flash.h \
+  /Users/ekremkaracan/pico/pico-sdk/src/rp2_common/hardware_adc/include/hardware/adc.h \
+  /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/adc.h \
+  /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/adc.h \
+  /Users/ekremkaracan/pico/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
+  /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
+  /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
+  /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/padsbank0.h \
+  /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
+  /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/iobank0.h \
+  /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
+  /Users/ekremkaracan/pico/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
+  /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
+  /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
   /Users/ekremkaracan/pico/seatsensor/project.h \
   /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/arm-none-eabi/include/stdio.h \
   /opt/homebrew/Cellar/arm-none-eabi-gcc/10.3-2021.07/gcc/lib/gcc/arm-none-eabi/10.3.1/include/stdarg.h \
@@ -2996,16 +3009,6 @@ CMakeFiles/seatsensor.dir/common.c.obj: /Users/ekremkaracan/pico/seatsensor/comm
   /Users/ekremkaracan/pico/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
   /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
   /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
-  /Users/ekremkaracan/pico/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
-  /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
-  /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
-  /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/padsbank0.h \
-  /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
-  /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/iobank0.h \
-  /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
-  /Users/ekremkaracan/pico/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
-  /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
-  /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
   /Users/ekremkaracan/pico/pico-sdk/src/rp2_common/hardware_uart/include/hardware/uart.h \
   /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
   /Users/ekremkaracan/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
