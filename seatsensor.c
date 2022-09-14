@@ -137,7 +137,7 @@ int	MeasureADC(int idx) {
 		avg += value;
 	}
 	avg /= MAX_READING;
-	if (ABSDIFF(peaks[idx], avg) > 3) {
+	if (ABSDIFF(peaks[idx], avg) > 6) {
 		int		K = 15;
 		peaks[idx] = avg;
 		for (int i = 0; i < 15; i++, K--) {
@@ -195,7 +195,7 @@ int	main(void) {
 			float result = adc_read() * conversion_factor;
 			float temp = 27 - (result - 0.706)/0.001721;
 			*/
-			seconds += 5;
+			seconds += 60;
 			sys.internal_temp = temp;
 			printf("~version(%s) id(%s) seconds(%llu) temp(%f)~\r\n",
 			 	sys.version,
@@ -203,12 +203,15 @@ int	main(void) {
 				sys.seconds,
 				sys.internal_temp
 			);
+			/*
 			for (int i = 0; i < 8; i++) {
 				reading[i] = -100;
 				peaks[i] = -100;
 			}
-			
-		} 
+			*/
+			for (int i = 0; i < 8; i++) 
+				printf("~analog(%d %s)~\r\n", i, getMap(reading[i], 4));
+		} else
 		for (int i = 0; i < 8; i++) {
 			int	v = MeasureADC(i);
 			if (v >= 0)
