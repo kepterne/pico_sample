@@ -1948,9 +1948,9 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
  .data          0x00000000        0x0 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
  .bss           0x00000000        0x0 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
- .text          0x00000000        0x0 /tmp/cc6jqaYT.o
- .data          0x00000000        0x0 /tmp/cc6jqaYT.o
- .bss           0x00000000        0x0 /tmp/cc6jqaYT.o
+ .text          0x00000000        0x0 /tmp/ccehVJrL.o
+ .data          0x00000000        0x0 /tmp/ccehVJrL.o
+ .bss           0x00000000        0x0 /tmp/ccehVJrL.o
  .data          0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/libgcc.a(_dvmd_tls.o)
  .text          0x00000000       0x10 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-atexit.o)
@@ -2183,7 +2183,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/crt0
 .boot2          0x10000000      0x100
                 0x10000000                __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 /tmp/cc6jqaYT.o
+ .boot2         0x10000000      0x100 /tmp/ccehVJrL.o
                 0x10000100                __boot2_end__ = .
                 0x00000001                ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
@@ -3536,7 +3536,7 @@ LOAD CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/lib/tinyusb/src/common/tusb
 LOAD CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 LOAD CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
 LOAD CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
-LOAD /tmp/cc6jqaYT.o
+LOAD /tmp/ccehVJrL.o
 LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libstdc++.a
 LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libm.a
 START GROUP
@@ -3636,7 +3636,7 @@ OUTPUT(seatsensor.elf elf32-littlearm)
  .ARM.attributes
                 0x000006e4       0x32 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
  .ARM.attributes
-                0x00000716       0x22 /tmp/cc6jqaYT.o
+                0x00000716       0x22 /tmp/ccehVJrL.o
  .ARM.attributes
                 0x00000738       0x1e /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/libgcc.a(_dvmd_tls.o)
  .ARM.attributes

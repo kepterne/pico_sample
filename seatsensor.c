@@ -195,7 +195,7 @@ int	main(void) {
 			float result = adc_read() * conversion_factor;
 			float temp = 27 - (result - 0.706)/0.001721;
 			*/
-			seconds += 60;
+			seconds += 4;
 			sys.internal_temp = temp;
 			printf("~version(%s) id(%s) seconds(%llu) temp(%f)~\r\n",
 			 	sys.version,
@@ -210,12 +210,12 @@ int	main(void) {
 			}
 			*/
 			for (int i = 0; i < 8; i++) 
-				printf("~analog(%d %s)~\r\n", i, getMap(reading[i], 4));
+				printf("~analog(%d %s)~\r\n", i, getMap(reading[i], 3));
 		} else
 		for (int i = 0; i < 8; i++) {
 			int	v = MeasureADC(i);
 			if (v >= 0)
-				printf("~analog(%d %s)~\r\n", i, getMap(v, 4));
+				printf("~analog(%d %s)~\r\n", i, getMap(v, 3));
 				//printf("%2d: %6d [%2d], ", i, v, 15 - reading[i]);
 		}
 #endif

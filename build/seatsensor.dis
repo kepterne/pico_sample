@@ -805,7 +805,7 @@ Disassembly of section .text:
 1000073a:	e025      	b.n	10000788 <main+0x7c>
 1000073c:	42bc      	cmp	r4, r7
 1000073e:	d12c      	bne.n	1000079a <main+0x8e>
-10000740:	203c      	movs	r0, #60	; 0x3c
+10000740:	2004      	movs	r0, #4
 10000742:	2100      	movs	r1, #0
 10000744:	1836      	adds	r6, r6, r0
 10000746:	414f      	adcs	r7, r1
@@ -829,7 +829,7 @@ Disassembly of section .text:
 1000076c:	00a2      	lsls	r2, r4, #2
 1000076e:	4b17      	ldr	r3, [pc, #92]	; (100007cc <main+0xc0>)
 10000770:	58d0      	ldr	r0, [r2, r3]
-10000772:	2104      	movs	r1, #4
+10000772:	2103      	movs	r1, #3
 10000774:	f7ff fdf2 	bl	1000035c <getMap>
 10000778:	0002      	movs	r2, r0
 1000077a:	0021      	movs	r1, r4
@@ -855,7 +855,7 @@ Disassembly of section .text:
 100007a6:	f7ff ff53 	bl	10000650 <MeasureADC>
 100007aa:	2800      	cmp	r0, #0
 100007ac:	dbf7      	blt.n	1000079e <main+0x92>
-100007ae:	2104      	movs	r1, #4
+100007ae:	2103      	movs	r1, #3
 100007b0:	f7ff fdd4 	bl	1000035c <getMap>
 100007b4:	0002      	movs	r2, r0
 100007b6:	0021      	movs	r1, r4
