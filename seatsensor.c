@@ -210,12 +210,12 @@ int	main(void) {
 			}
 			*/
 			for (int i = 0; i < 8; i++) 
-				printf("~analog(%d %s)~\r\n", i, getMap(reading[i], 3));
+				printf("~analog(%d %s %d)~\r\n", i, getMap(reading[i], 3), peaks[i]);
 		} else
 		for (int i = 0; i < 8; i++) {
 			int	v = MeasureADC(i);
 			if (v >= 0)
-				printf("~analog(%d %s)~\r\n", i, getMap(v, 3));
+				printf("~analog(%d %s %d)~\r\n", i, getMap(v, 3), peaks[i]);
 				//printf("%2d: %6d [%2d], ", i, v, 15 - reading[i]);
 		}
 #endif

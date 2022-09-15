@@ -1948,9 +1948,9 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
  .data          0x00000000        0x0 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
  .bss           0x00000000        0x0 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
- .text          0x00000000        0x0 /tmp/ccehVJrL.o
- .data          0x00000000        0x0 /tmp/ccehVJrL.o
- .bss           0x00000000        0x0 /tmp/ccehVJrL.o
+ .text          0x00000000        0x0 /tmp/ccQBsSAp.o
+ .data          0x00000000        0x0 /tmp/ccQBsSAp.o
+ .bss           0x00000000        0x0 /tmp/ccQBsSAp.o
  .data          0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/libgcc.a(_dvmd_tls.o)
  .text          0x00000000       0x10 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-atexit.o)
@@ -2183,11 +2183,11 @@ LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/crt0
 .boot2          0x10000000      0x100
                 0x10000000                __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 /tmp/ccehVJrL.o
+ .boot2         0x10000000      0x100 /tmp/ccQBsSAp.o
                 0x10000100                __boot2_end__ = .
                 0x00000001                ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
-.text           0x10000100     0xaca8
+.text           0x10000100     0xacb8
                 0x10000100                __logical_binary_start = .
  *(.vectors)
  .vectors       0x10000100       0xd4 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
@@ -2262,652 +2262,652 @@ LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/crt0
  .text.MeasureADC
                 0x10000650       0xbc CMakeFiles/seatsensor.dir/seatsensor.c.obj
                 0x10000650                MeasureADC
- .text.main     0x1000070c       0xc8 CMakeFiles/seatsensor.dir/seatsensor.c.obj
+ .text.main     0x1000070c       0xd8 CMakeFiles/seatsensor.dir/seatsensor.c.obj
                 0x1000070c                main
  .text.GetBoardID
-                0x100007d4       0x30 CMakeFiles/seatsensor.dir/common.c.obj
-                0x100007d4                GetBoardID
+                0x100007e4       0x30 CMakeFiles/seatsensor.dir/common.c.obj
+                0x100007e4                GetBoardID
  .text.SaveConfig
-                0x10000804       0x48 CMakeFiles/seatsensor.dir/common.c.obj
-                0x10000804                SaveConfig
+                0x10000814       0x48 CMakeFiles/seatsensor.dir/common.c.obj
+                0x10000814                SaveConfig
  .text.UpdateConfig
-                0x1000084c       0x28 CMakeFiles/seatsensor.dir/common.c.obj
-                0x1000084c                UpdateConfig
- .text.initSys  0x10000874      0x114 CMakeFiles/seatsensor.dir/common.c.obj
-                0x10000874                initSys
+                0x1000085c       0x28 CMakeFiles/seatsensor.dir/common.c.obj
+                0x1000085c                UpdateConfig
+ .text.initSys  0x10000884      0x114 CMakeFiles/seatsensor.dir/common.c.obj
+                0x10000884                initSys
  .text.resetPico
-                0x10000988       0x1c CMakeFiles/seatsensor.dir/common.c.obj
-                0x10000988                resetPico
+                0x10000998       0x1c CMakeFiles/seatsensor.dir/common.c.obj
+                0x10000998                resetPico
  .text.LoopButton
-                0x100009a4      0x128 CMakeFiles/seatsensor.dir/common.c.obj
-                0x100009a4                LoopButton
- .text.loopSys  0x10000acc       0x38 CMakeFiles/seatsensor.dir/common.c.obj
-                0x10000acc                loopSys
+                0x100009b4      0x128 CMakeFiles/seatsensor.dir/common.c.obj
+                0x100009b4                LoopButton
+ .text.loopSys  0x10000adc       0x38 CMakeFiles/seatsensor.dir/common.c.obj
+                0x10000adc                loopSys
  .text.adc_init
-                0x10000b04       0x34 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
-                0x10000b04                adc_init
+                0x10000b14       0x34 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj
+                0x10000b14                adc_init
  .text.hw_claim_lock
-                0x10000b38       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-                0x10000b38                hw_claim_lock
+                0x10000b48       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x10000b48                hw_claim_lock
  .text.hw_claim_unlock
-                0x10000b50       0x14 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-                0x10000b50                hw_claim_unlock
+                0x10000b60       0x14 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x10000b60                hw_claim_unlock
  .text.hw_claim_or_assert
-                0x10000b64       0x32 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-                0x10000b64                hw_claim_or_assert
- *fill*         0x10000b96        0x2 
+                0x10000b74       0x32 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x10000b74                hw_claim_or_assert
+ *fill*         0x10000ba6        0x2 
  .text.running_on_fpga
-                0x10000b98       0x14 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
-                0x10000b98                running_on_fpga
+                0x10000ba8       0x14 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+                0x10000ba8                running_on_fpga
  .text.spin_locks_reset
-                0x10000bac       0x20 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x10000bac                spin_locks_reset
+                0x10000bbc       0x20 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x10000bbc                spin_locks_reset
  .text.next_striped_spin_lock_num
-                0x10000bcc       0x1c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x10000bcc                next_striped_spin_lock_num
+                0x10000bdc       0x1c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x10000bdc                next_striped_spin_lock_num
  .text.gpio_set_function
-                0x10000be8       0x30 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x10000be8                gpio_set_function
+                0x10000bf8       0x30 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x10000bf8                gpio_set_function
  .text.gpio_set_pulls
-                0x10000c18       0x34 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x10000c18                gpio_set_pulls
+                0x10000c28       0x34 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x10000c28                gpio_set_pulls
  .text.gpio_set_input_enabled
-                0x10000c4c       0x30 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x10000c4c                gpio_set_input_enabled
+                0x10000c5c       0x30 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x10000c5c                gpio_set_input_enabled
  .text.gpio_init
-                0x10000c7c       0x16 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x10000c7c                gpio_init
- *fill*         0x10000c92        0x2 
+                0x10000c8c       0x16 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x10000c8c                gpio_init
+ *fill*         0x10000ca2        0x2 
  .text.set_raw_irq_handler_and_unlock
-                0x10000c94       0x28 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000ca4       0x28 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .text.make_branch
-                0x10000cbc       0x48 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000ccc       0x48 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .text.insert_branch_and_link
-                0x10000d04       0x40 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000d14       0x40 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .text.irq_is_enabled
-                0x10000d44       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000d44                irq_is_enabled
+                0x10000d54       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000d54                irq_is_enabled
  .text.irq_set_mask_enabled
-                0x10000d5c       0x20 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000d5c                irq_set_mask_enabled
+                0x10000d6c       0x20 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000d6c                irq_set_mask_enabled
  .text.irq_set_enabled
-                0x10000d7c        0xe CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000d7c                irq_set_enabled
- *fill*         0x10000d8a        0x2 
+                0x10000d8c        0xe CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000d8c                irq_set_enabled
+ *fill*         0x10000d9a        0x2 
  .text.irq_get_vtable_handler
-                0x10000d8c       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000d8c                irq_get_vtable_handler
+                0x10000d9c       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000d9c                irq_get_vtable_handler
  .text.irq_set_exclusive_handler
-                0x10000d9c       0x54 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000d9c                irq_set_exclusive_handler
+                0x10000dac       0x54 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000dac                irq_set_exclusive_handler
  .text.irq_remove_handler
-                0x10000df0      0x1ac CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000df0                irq_remove_handler
+                0x10000e00      0x1ac CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000e00                irq_remove_handler
  .text.irq_add_tail_to_free_list
-                0x10000f9c       0xf0 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000f9c                irq_add_tail_to_free_list
+                0x10000fac       0xf0 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000fac                irq_add_tail_to_free_list
  .text.irq_init_priorities
-                0x1000108c       0x1c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x1000108c                irq_init_priorities
+                0x1000109c       0x1c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x1000109c                irq_init_priorities
  .text.lock_init
-                0x100010a8       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
-                0x100010a8                lock_init
+                0x100010b8       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj
+                0x100010b8                lock_init
  .text.alarm_pool_post_alloc_init
-                0x100010b8       0x40 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x100010c8       0x40 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.sleep_until_callback
-                0x100010f8       0x30 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001108       0x30 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.timer_pool_entry_comparator
-                0x10001128       0x7c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001128                timer_pool_entry_comparator
+                0x10001138       0x7c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001138                timer_pool_entry_comparator
  .text.ph_add_child_node
-                0x100011a4       0xa4 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x100011b4       0xa4 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.ph_merge_nodes
-                0x10001248       0x3a CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x10001282        0x2 
+                0x10001258       0x3a CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x10001292        0x2 
  .text.add_alarm_under_lock
-                0x10001284      0x180 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001294      0x180 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_alarm_callback
-                0x10001404      0x344 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001414      0x344 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_init_default
-                0x10001748       0x38 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001748                alarm_pool_init_default
+                0x10001758       0x38 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001758                alarm_pool_init_default
  .text.alarm_pool_get_default
-                0x10001780       0x2c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001780                alarm_pool_get_default
+                0x10001790       0x2c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001790                alarm_pool_get_default
  .text.alarm_pool_add_alarm_at
-                0x100017ac      0x168 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x100017ac                alarm_pool_add_alarm_at
+                0x100017bc      0x168 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x100017bc                alarm_pool_add_alarm_at
  .text.sleep_until
-                0x10001914       0xfc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001914                sleep_until
+                0x10001924       0xfc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001924                sleep_until
  .text.sleep_us
-                0x10001a10       0x54 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001a10                sleep_us
+                0x10001a20       0x54 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001a20                sleep_us
  .text.sleep_ms
-                0x10001a64       0x14 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001a64                sleep_ms
+                0x10001a74       0x14 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001a74                sleep_ms
  .text.hardware_alarm_irq_handler
-                0x10001a78       0x8c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001a88       0x8c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .text.hardware_alarm_claim
-                0x10001b04       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001b04                hardware_alarm_claim
+                0x10001b14       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001b14                hardware_alarm_claim
  .text.time_us_64
-                0x10001b1c       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001b1c                time_us_64
+                0x10001b2c       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001b2c                time_us_64
  .text.busy_wait_until
-                0x10001b34       0x28 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001b34                busy_wait_until
+                0x10001b44       0x28 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001b44                busy_wait_until
  .text.busy_wait_us
-                0x10001b5c       0x48 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001b5c                busy_wait_us
+                0x10001b6c       0x48 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001b6c                busy_wait_us
  .text.hardware_alarm_set_callback
-                0x10001ba4       0x90 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001ba4                hardware_alarm_set_callback
+                0x10001bb4       0x90 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001bb4                hardware_alarm_set_callback
  .text.hardware_alarm_set_target
-                0x10001c34       0xe8 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001c34                hardware_alarm_set_target
+                0x10001c44       0xe8 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001c44                hardware_alarm_set_target
  .text.hardware_alarm_cancel
-                0x10001d1c       0x40 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001d1c                hardware_alarm_cancel
+                0x10001d2c       0x40 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001d2c                hardware_alarm_cancel
  .text.ph_add_child_node
-                0x10001d5c       0xa4 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001d6c       0xa4 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
  .text.ph_merge_nodes
-                0x10001e00       0x3a CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
- *fill*         0x10001e3a        0x2 
+                0x10001e10       0x3a CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+ *fill*         0x10001e4a        0x2 
  .text.ph_clear
-                0x10001e3c       0x70 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10001e3c                ph_clear
+                0x10001e4c       0x70 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001e4c                ph_clear
  .text.ph_post_alloc_init
-                0x10001eac        0xe CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10001eac                ph_post_alloc_init
- *fill*         0x10001eba        0x2 
+                0x10001ebc        0xe CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001ebc                ph_post_alloc_init
+ *fill*         0x10001eca        0x2 
  .text.ph_merge_two_pass
-                0x10001ebc       0xac CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10001ebc                ph_merge_two_pass
+                0x10001ecc       0xac CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001ecc                ph_merge_two_pass
  .text.ph_remove_any_head
-                0x10001f68      0x108 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001f78      0x108 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
  .text.ph_remove_head
-                0x10002070       0x14 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10002070                ph_remove_head
+                0x10002080       0x14 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10002080                ph_remove_head
  .text.ph_remove_and_free_node
-                0x10002084       0xf8 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10002084                ph_remove_and_free_node
+                0x10002094       0xf8 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10002094                ph_remove_and_free_node
  .text.mutex_init
-                0x1000217c       0x1a CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
-                0x1000217c                mutex_init
+                0x1000218c       0x1a CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x1000218c                mutex_init
  .text.recursive_mutex_init
-                0x10002196       0x1e CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
-                0x10002196                recursive_mutex_init
+                0x100021a6       0x1e CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x100021a6                recursive_mutex_init
  .text.uart_set_baudrate
-                0x100021b4       0x5c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
-                0x100021b4                uart_set_baudrate
+                0x100021c4       0x5c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+                0x100021c4                uart_set_baudrate
  .text.uart_set_translate_crlf
-                0x10002210       0x28 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
-                0x10002210                uart_set_translate_crlf
+                0x10002220       0x28 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+                0x10002220                uart_set_translate_crlf
  .text.uart_init
-                0x10002238       0x84 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
-                0x10002238                uart_init
- .text._exit    0x100022bc        0x4 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x100022bc                _exit
- .text._sbrk    0x100022c0       0x38 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x100022c0                _sbrk
- .text.exit     0x100022f8        0x6 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x100022f8                exit
- *fill*         0x100022fe        0x2 
+                0x10002248       0x84 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+                0x10002248                uart_init
+ .text._exit    0x100022cc        0x4 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100022cc                _exit
+ .text._sbrk    0x100022d0       0x38 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100022d0                _sbrk
+ .text.exit     0x10002308        0x6 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10002308                exit
+ *fill*         0x1000230e        0x2 
  .text.__assert_func
-                0x10002300       0x3c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10002300                __assert_func
+                0x10002310       0x3c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10002310                __assert_func
  .text.runtime_init
-                0x1000233c       0xf8 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x1000233c                runtime_init
- .text.panic    0x10002434       0x30 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10002434                panic
+                0x1000234c       0xf8 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x1000234c                runtime_init
+ .text.panic    0x10002444       0x30 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10002444                panic
  .text.clock_configure
-                0x10002464       0xfc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x10002464                clock_configure
+                0x10002474       0xfc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x10002474                clock_configure
  .text.clocks_init
-                0x10002560      0x100 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x10002560                clocks_init
+                0x10002570      0x100 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x10002570                clocks_init
  .text.clock_get_hz
-                0x10002660        0xc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x10002660                clock_get_hz
+                0x10002670        0xc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x10002670                clock_get_hz
  .text.pll_init
-                0x1000266c      0x140 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
-                0x1000266c                pll_init
+                0x1000267c      0x140 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+                0x1000267c                pll_init
  .text.watchdog_start_tick
-                0x100027ac       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
-                0x100027ac                watchdog_start_tick
+                0x100027bc       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x100027bc                watchdog_start_tick
  .text.watchdog_update
-                0x100027bc       0x14 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
-                0x100027bc                watchdog_update
+                0x100027cc       0x14 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x100027cc                watchdog_update
  .text._watchdog_enable
-                0x100027d0       0x74 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
-                0x100027d0                _watchdog_enable
+                0x100027e0       0x74 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x100027e0                _watchdog_enable
  .text.watchdog_reboot
-                0x10002844       0x44 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
-                0x10002844                watchdog_reboot
+                0x10002854       0x44 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x10002854                watchdog_reboot
  .text.xosc_init
-                0x10002888       0x28 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
-                0x10002888                xosc_init
+                0x10002898       0x28 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+                0x10002898                xosc_init
  .text._out_buffer
-                0x100028b0        0x8 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x100028c0        0x8 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._out_null
-                0x100028b8        0x2 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x100028c8        0x2 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._out_fct
-                0x100028ba        0xe CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .text._atoi    0x100028c8       0x24 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x100028ca        0xe CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .text._atoi    0x100028d8       0x24 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._out_rev
-                0x100028ec       0x8c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x100028fc       0x8c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._ntoa_format
-                0x10002978      0x112 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002988      0x112 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._ntoa_long
-                0x10002a8a       0x9e CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002a9a       0x9e CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._ntoa_long_long
-                0x10002b28       0xe2 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- *fill*         0x10002c0a        0x2 
- .text._etoa    0x10002c0c      0x424 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .text._ftoa    0x10003030      0x340 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002b38       0xe2 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ *fill*         0x10002c1a        0x2 
+ .text._etoa    0x10002c1c      0x424 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .text._ftoa    0x10003040      0x340 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._vsnprintf
-                0x10003370      0x640 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10003380      0x640 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text.__wrap_sprintf
-                0x100039b0       0x28 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
-                0x100039b0                __wrap_sprintf
+                0x100039c0       0x28 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x100039c0                __wrap_sprintf
  .text.vfctprintf
-                0x100039d8       0x20 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
-                0x100039d8                vfctprintf
- .text          0x100039f8       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x100039e8       0x20 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x100039e8                vfctprintf
+ .text          0x10003a08       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .text.rom_func_lookup
-                0x10003a08       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x10003a08                rom_func_lookup
- .text.rom_data_lookup
                 0x10003a18       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x10003a18                rom_data_lookup
+                0x10003a18                rom_func_lookup
+ .text.rom_data_lookup
+                0x10003a28       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x10003a28                rom_data_lookup
  .text.rom_funcs_lookup
-                0x10003a28       0x36 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x10003a28                rom_funcs_lookup
- *fill*         0x10003a5e        0x2 
+                0x10003a38       0x36 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x10003a38                rom_funcs_lookup
+ *fill*         0x10003a6e        0x2 
  .text.__wrap___aeabi_idiv
-                0x10003a60       0x50 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x10003a60                __wrap___aeabi_idivmod
-                0x10003a60                divmod_s32s32
-                0x10003a60                div_s32s32
-                0x10003a60                __wrap___aeabi_idiv
-                0x10003a68                divmod_s32s32_unsafe
-                0x10003a94                divmod_s32s32_savestate
+                0x10003a70       0x50 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x10003a70                __wrap___aeabi_idivmod
+                0x10003a70                divmod_s32s32
+                0x10003a70                div_s32s32
+                0x10003a70                __wrap___aeabi_idiv
+                0x10003a78                divmod_s32s32_unsafe
+                0x10003aa4                divmod_s32s32_savestate
  .text.__wrap___aeabi_uidiv
-                0x10003ab0       0x4c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x10003ab0                __wrap___aeabi_uidiv
-                0x10003ab0                __wrap___aeabi_uidivmod
-                0x10003ab0                div_u32u32
-                0x10003ab0                divmod_u32u32
-                0x10003ab8                divmod_u32u32_unsafe
-                0x10003ae0                divmod_u32u32_savestate
+                0x10003ac0       0x4c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x10003ac0                __wrap___aeabi_uidiv
+                0x10003ac0                __wrap___aeabi_uidivmod
+                0x10003ac0                div_u32u32
+                0x10003ac0                divmod_u32u32
+                0x10003ac8                divmod_u32u32_unsafe
+                0x10003af0                divmod_u32u32_savestate
  .text.__wrap___aeabi_ldiv
-                0x10003afc      0x434 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x10003afc                div_s64s64
-                0x10003afc                divmod_s64s64
-                0x10003afc                __wrap___aeabi_ldivmod
-                0x10003b34                div_u64u64
-                0x10003b34                divmod_u64u64
-                0x10003b34                __wrap___aeabi_uldivmod
-                0x10003b44                divmod_u64u64_savestate
-                0x10003b6c                divmod_s64s64_unsafe
-                0x10003bf4                divmod_u64u64_unsafe
+                0x10003b0c      0x434 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x10003b0c                div_s64s64
+                0x10003b0c                divmod_s64s64
+                0x10003b0c                __wrap___aeabi_ldivmod
+                0x10003b44                div_u64u64
+                0x10003b44                divmod_u64u64
+                0x10003b44                __wrap___aeabi_uldivmod
+                0x10003b54                divmod_u64u64_savestate
+                0x10003b7c                divmod_s64s64_unsafe
+                0x10003c04                divmod_u64u64_unsafe
  .text.__wrap___aeabi_darithmetic
-                0x10003f30       0x80 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003f30                __wrap___aeabi_drsub
-                0x10003f36                __wrap___aeabi_dsub
-                0x10003f48                __wrap___aeabi_dadd
-                0x10003f5a                __wrap___aeabi_ddiv
-                0x10003f96                __wrap___aeabi_dmul
+                0x10003f40       0x80 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003f40                __wrap___aeabi_drsub
+                0x10003f46                __wrap___aeabi_dsub
+                0x10003f58                __wrap___aeabi_dadd
+                0x10003f6a                __wrap___aeabi_ddiv
+                0x10003fa6                __wrap___aeabi_dmul
  .text.__wrap___aeabi_cdcmple
-                0x10003fb0       0x6c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003fb0                __wrap___aeabi_cdrcmple
-                0x10003fc0                __wrap___aeabi_cdcmple
-                0x10003fc0                __wrap___aeabi_cdcmpeq
+                0x10003fc0       0x6c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003fc0                __wrap___aeabi_cdrcmple
+                0x10003fd0                __wrap___aeabi_cdcmple
+                0x10003fd0                __wrap___aeabi_cdcmpeq
  .text.__wrap___aeabi_dcmpeq
-                0x1000401c       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x1000401c                __wrap___aeabi_dcmpeq
+                0x1000402c       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x1000402c                __wrap___aeabi_dcmpeq
  .text.__wrap___aeabi_dcmplt
-                0x1000402c        0xc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x1000402c                __wrap___aeabi_dcmplt
+                0x1000403c        0xc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x1000403c                __wrap___aeabi_dcmplt
  .text.__wrap___aeabi_dcmple
-                0x10004038       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004038                __wrap___aeabi_dcmple
- .text.__wrap___aeabi_dcmpge
                 0x10004048       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004048                __wrap___aeabi_dcmpge
+                0x10004048                __wrap___aeabi_dcmple
+ .text.__wrap___aeabi_dcmpge
+                0x10004058       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10004058                __wrap___aeabi_dcmpge
  .text.__wrap___aeabi_dcmpgt
-                0x10004058        0xa CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004058                __wrap___aeabi_dcmpgt
+                0x10004068        0xa CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10004068                __wrap___aeabi_dcmpgt
  .text.__wrap___aeabi_dcmpun
-                0x10004062       0x1c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004062                __wrap___aeabi_dcmpun
- *fill*         0x1000407e        0x2 
+                0x10004072       0x1c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10004072                __wrap___aeabi_dcmpun
+ *fill*         0x1000408e        0x2 
  .text.__wrap___aeabi_i2d
-                0x10004080       0x38 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004080                __wrap___aeabi_ui2d
-                0x10004088                __wrap___aeabi_i2d
+                0x10004090       0x38 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10004090                __wrap___aeabi_ui2d
+                0x10004098                __wrap___aeabi_i2d
  .text.__wrap___aeabi_d2iz
-                0x100040b8       0x48 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x100040b8                __wrap___aeabi_d2iz
-                0x100040b8                double2int_z
+                0x100040c8       0x48 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x100040c8                __wrap___aeabi_d2iz
+                0x100040c8                double2int_z
  .text.__wrap___aeabi_d2uiz
-                0x10004100       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004100                double2uint
-                0x10004100                __wrap___aeabi_d2uiz
+                0x10004110       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10004110                double2uint
+                0x10004110                __wrap___aeabi_d2uiz
  .text.__wrap___aeabi_l2d
-                0x10004118       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004118                __wrap___aeabi_l2d
+                0x10004128       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10004128                __wrap___aeabi_l2d
  .text.__wrap___aeabi_d2lz
-                0x10004130       0x26 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004130                __wrap___aeabi_d2lz
-                0x10004130                double2int64_z
- *fill*         0x10004156        0x2 
+                0x10004140       0x26 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10004140                __wrap___aeabi_d2lz
+                0x10004140                double2int64_z
+ *fill*         0x10004166        0x2 
  .text.double2int64
-                0x10004158       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004158                double2int64
+                0x10004168       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10004168                double2int64
  .text.double2ufix64
-                0x10004170       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004170                double2ufix64
+                0x10004180       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10004180                double2ufix64
  .text.__wrap___aeabi_d2f
-                0x10004188       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10004188                __wrap___aeabi_d2f
+                0x10004198       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10004198                __wrap___aeabi_d2f
  .text.__aeabi_double_init
-                0x100041a0       0xc8 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x100041a0                __aeabi_double_init
+                0x100041b0       0xc8 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x100041b0                __aeabi_double_init
  .text.double_table_shim_on_use_helper
-                0x10004268       0x34 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004268                double_table_shim_on_use_helper
+                0x10004278       0x34 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004278                double_table_shim_on_use_helper
  .text.__wrap___aeabi_dsub
-                0x1000429c       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x1000429c                drsub_shim
-                0x100042a2                dsub_shim
+                0x100042ac       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x100042ac                drsub_shim
+                0x100042b2                dsub_shim
  .text.dadd_shim
-                0x100042ac      0x15c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x100042ac                dadd_shim
+                0x100042bc      0x15c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x100042bc                dadd_shim
  .text.dmul_shim
-                0x10004408      0x15c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004408                dmul_shim
+                0x10004418      0x15c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004418                dmul_shim
  .text.ddiv_shim
-                0x10004564      0x1b0 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004564                ddiv_shim
+                0x10004574      0x1b0 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004574                ddiv_shim
  .text.double2uint_shim
-                0x10004714        0xe CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004714                double2uint_shim
-                0x10004716                double2ufix_shim
+                0x10004724        0xe CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004724                double2uint_shim
+                0x10004726                double2ufix_shim
  .text.double2int64_shim
-                0x10004722       0x1a CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004722                double2int64_shim
-                0x10004724                double2fix64_shim
+                0x10004732       0x1a CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004732                double2int64_shim
+                0x10004734                double2fix64_shim
  .text.double2uint64_shim
-                0x1000473c       0x70 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x1000473c                double2uint64_shim
-                0x1000473e                double2ufix64_shim
-                0x1000475e                d2fix_a
+                0x1000474c       0x70 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x1000474c                double2uint64_shim
+                0x1000474e                double2ufix64_shim
+                0x1000476e                d2fix_a
  .text.double2float_shim
-                0x100047ac       0x5c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x100047ac                double2float_shim
+                0x100047bc       0x5c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x100047bc                double2float_shim
  .text.x2double_shims
-                0x10004808       0x90 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004808                uint2double_shim
-                0x1000480a                ufix2double_shim
-                0x10004810                int2double_shim
-                0x10004812                fix2double_shim
-                0x10004818                uint642double_shim
-                0x1000481a                ufix642double_shim
-                0x10004820                int642double_shim
-                0x10004822                fix642double_shim
+                0x10004818       0x90 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004818                uint2double_shim
+                0x1000481a                ufix2double_shim
+                0x10004820                int2double_shim
+                0x10004822                fix2double_shim
+                0x10004828                uint642double_shim
+                0x1000482a                ufix642double_shim
+                0x10004830                int642double_shim
+                0x10004832                fix642double_shim
  .text.dunpacks
-                0x10004898       0x3c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004898                dunpacks
+                0x100048a8       0x3c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x100048a8                dunpacks
  .text.__aeabi_lmul
-                0x100048d4       0x32 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
-                0x100048d4                __wrap___aeabi_lmul
- *fill*         0x10004906        0x2 
+                0x100048e4       0x32 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+                0x100048e4                __wrap___aeabi_lmul
+ *fill*         0x10004916        0x2 
  .text.__wrap___aeabi_cfcmple
-                0x10004908       0x50 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
-                0x10004908                __wrap___aeabi_cfrcmple
-                0x10004914                __wrap___aeabi_cfcmpeq
-                0x10004914                __wrap___aeabi_cfcmple
+                0x10004918       0x50 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x10004918                __wrap___aeabi_cfrcmple
+                0x10004924                __wrap___aeabi_cfcmpeq
+                0x10004924                __wrap___aeabi_cfcmple
  .text.__wrap___aeabi_fcmple
-                0x10004958       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
-                0x10004958                __wrap___aeabi_fcmple
+                0x10004968       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x10004968                __wrap___aeabi_fcmple
  .text.__wrap___aeabi_fcmpun
-                0x10004968       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
-                0x10004968                __wrap___aeabi_fcmpun
+                0x10004978       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x10004978                __wrap___aeabi_fcmpun
  .text.__aeabi_float_init
-                0x10004980       0xfc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
-                0x10004980                __aeabi_float_init
+                0x10004990       0xfc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x10004990                __aeabi_float_init
  .text.float_table_shim_on_use_helper
-                0x10004a7c       0x34 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
-                0x10004a7c                float_table_shim_on_use_helper
- .text          0x10004ab0       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x10004ab0                __aeabi_mem_init
- .text.memset   0x10004ac0        0xc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x10004ac0                __wrap_memset
- .text.memcpy   0x10004acc        0xc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x10004acc                __wrap___aeabi_memcpy
-                0x10004acc                __wrap_memcpy
+                0x10004a8c       0x34 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+                0x10004a8c                float_table_shim_on_use_helper
+ .text          0x10004ac0       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x10004ac0                __aeabi_mem_init
+ .text.memset   0x10004ad0        0xc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x10004ad0                __wrap_memset
+ .text.memcpy   0x10004adc        0xc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x10004adc                __wrap___aeabi_memcpy
+                0x10004adc                __wrap_memcpy
  .text.stdio_out_chars_no_crlf
-                0x10004ad8        0xe CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- *fill*         0x10004ae6        0x2 
+                0x10004ae8        0xe CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ *fill*         0x10004af6        0x2 
  .text.stdio_out_chars_crlf
-                0x10004ae8       0x80 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004af8       0x80 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_stack_buffer_flush
-                0x10004b68       0x44 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004b78       0x44 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_buffered_printer
-                0x10004bac       0x20 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004bbc       0x20 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_get_until
-                0x10004bcc       0x7c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004bdc       0x7c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdout_serialize_begin
-                0x10004c48       0x30 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004c48                stdout_serialize_begin
+                0x10004c58       0x30 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004c58                stdout_serialize_begin
  .text.stdout_serialize_end
-                0x10004c78       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004c78                stdout_serialize_end
+                0x10004c88       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004c88                stdout_serialize_end
  .text.stdio_put_string
-                0x10004c88       0x94 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- .text._read    0x10004d1c       0x24 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004d1c                _read
- .text._write   0x10004d40       0x22 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004d40                _write
- *fill*         0x10004d62        0x2 
+                0x10004c98       0x94 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .text._read    0x10004d2c       0x24 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004d2c                _read
+ .text._write   0x10004d50       0x22 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004d50                _write
+ *fill*         0x10004d72        0x2 
  .text.stdio_set_driver_enabled
-                0x10004d64       0x2c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004d64                stdio_set_driver_enabled
+                0x10004d74       0x2c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004d74                stdio_set_driver_enabled
  .text.stdio_flush
-                0x10004d90       0x20 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004d90                stdio_flush
+                0x10004da0       0x20 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004da0                stdio_flush
  .text.__wrap_puts
-                0x10004db0       0x1e CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004db0                __wrap_puts
- *fill*         0x10004dce        0x2 
+                0x10004dc0       0x1e CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004dc0                __wrap_puts
+ *fill*         0x10004dde        0x2 
  .text.__wrap_vprintf
-                0x10004dd0       0x44 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004dd0                __wrap_vprintf
+                0x10004de0       0x44 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004de0                __wrap_vprintf
  .text.__wrap_printf
-                0x10004e14       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004e14                __wrap_printf
+                0x10004e24       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004e24                __wrap_printf
  .text.stdio_uart_out_chars
-                0x10004e2c       0x70 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x10004e3c       0x70 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .text.stdio_uart_in_chars
-                0x10004e9c       0x50 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
-                0x10004e9c                stdio_uart_in_chars
+                0x10004eac       0x50 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x10004eac                stdio_uart_in_chars
  .text.stdio_uart_init_full
-                0x10004eec       0x3c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
-                0x10004eec                stdio_uart_init_full
+                0x10004efc       0x3c CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x10004efc                stdio_uart_init_full
  .text._retrieve_unique_id_on_boot
-                0x10004f28       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
- .text.pico_get_unique_board_id
                 0x10004f38       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
-                0x10004f38                pico_get_unique_board_id
+ .text.pico_get_unique_board_id
+                0x10004f48       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+                0x10004f48                pico_get_unique_board_id
  .text.flash_get_unique_id
-                0x10004f48       0x40 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
-                0x10004f48                flash_get_unique_id
- .text          0x10004f88       0x58 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-callocr.o)
-                0x10004f88                _calloc_r
- .text          0x10004fe0      0x570 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-mallocr.o)
-                0x10004fe0                _malloc_r
- .text          0x10005550       0x4c /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-memcmp.o)
-                0x10005550                memcmp
- .text          0x1000559c        0x8 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-mlock.o)
-                0x1000559c                __malloc_lock
-                0x100055a0                __malloc_unlock
- .text          0x100055a4      0x3b0 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-reallocr.o)
-                0x100055a4                _realloc_r
- .text          0x10005954       0x24 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-sbrkr.o)
-                0x10005954                _sbrk_r
- .text          0x10005978       0x9c /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-sscanf.o)
-                0x10005978                sscanf
-                0x100059c8                _sscanf_r
- .text          0x10005a14       0xa0 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-stdio.o)
-                0x10005a14                __sread
-                0x10005a3c                __seofread
-                0x10005a40                __swrite
-                0x10005a7c                __sseek
-                0x10005aa8                __sclose
- .text          0x10005ab4       0x38 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strcasecmp.o)
-                0x10005ab4                strcasecmp
- .text          0x10005aec       0x88 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strcmp.o)
-                0x10005aec                strcmp
- .text          0x10005b74       0x10 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strcpy.o)
-                0x10005b74                strcpy
- .text          0x10005b84       0x64 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strlen-stub.o)
-                0x10005b84                strlen
- .text          0x10005be8      0xfb0 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-svfscanf.o)
-                0x10005be8                __ssvfscanf_r
- .text          0x10006b98       0x28 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-writer.o)
-                0x10006b98                _write_r
- .text          0x10006bc0       0x24 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-closer.o)
-                0x10006bc0                _close_r
- .text          0x10006be4      0x274 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-freer.o)
-                0x10006be4                _malloc_trim_r
-                0x10006c84                _free_r
- .text          0x10006e58        0xc /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-iswspace.o)
-                0x10006e58                iswspace
- .text          0x10006e64       0x18 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-iswspace_l.o)
-                0x10006e64                iswspace_l
- .text          0x10006e7c       0x6c /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-locale.o)
-                0x10006e7c                _setlocale_r
-                0x10006ec0                __locale_mb_cur_max
-                0x10006ed0                setlocale
- .text          0x10006ee8       0x14 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-localeconv.o)
-                0x10006ee8                __localeconv_l
-                0x10006eec                _localeconv_r
-                0x10006ef4                localeconv
- .text          0x10006efc       0x28 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-lseekr.o)
-                0x10006efc                _lseek_r
- .text          0x10006f24       0x94 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-mbrtowc.o)
-                0x10006f24                _mbrtowc_r
-                0x10006f6c                mbrtowc
- .text          0x10006fb8       0x44 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-mbtowc_r.o)
-                0x10006fb8                _mbtowc_r
-                0x10006fd0                __ascii_mbtowc
- .text          0x10006ffc       0x9c /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-memmove.o)
-                0x10006ffc                memmove
- .text          0x10007098       0x28 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-readr.o)
-                0x10007098                _read_r
- .text          0x100070c0       0x6c /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-sccl.o)
-                0x100070c0                __sccl
- .text          0x1000712c        0x8 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-sf_nan.o)
-                0x1000712c                nanf
- .text          0x10007134     0x1034 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strtod.o)
-                0x10007134                _strtod_l
-                0x10007fc0                _strtod_r
-                0x10007fd0                strtod_l
-                0x10007fe8                strtod
-                0x10008004                strtof_l
-                0x100080b4                strtof
+                0x10004f58       0x40 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+                0x10004f58                flash_get_unique_id
+ .text          0x10004f98       0x58 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-callocr.o)
+                0x10004f98                _calloc_r
+ .text          0x10004ff0      0x570 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-mallocr.o)
+                0x10004ff0                _malloc_r
+ .text          0x10005560       0x4c /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-memcmp.o)
+                0x10005560                memcmp
+ .text          0x100055ac        0x8 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-mlock.o)
+                0x100055ac                __malloc_lock
+                0x100055b0                __malloc_unlock
+ .text          0x100055b4      0x3b0 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-reallocr.o)
+                0x100055b4                _realloc_r
+ .text          0x10005964       0x24 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-sbrkr.o)
+                0x10005964                _sbrk_r
+ .text          0x10005988       0x9c /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-sscanf.o)
+                0x10005988                sscanf
+                0x100059d8                _sscanf_r
+ .text          0x10005a24       0xa0 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-stdio.o)
+                0x10005a24                __sread
+                0x10005a4c                __seofread
+                0x10005a50                __swrite
+                0x10005a8c                __sseek
+                0x10005ab8                __sclose
+ .text          0x10005ac4       0x38 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strcasecmp.o)
+                0x10005ac4                strcasecmp
+ .text          0x10005afc       0x88 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strcmp.o)
+                0x10005afc                strcmp
+ .text          0x10005b84       0x10 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strcpy.o)
+                0x10005b84                strcpy
+ .text          0x10005b94       0x64 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strlen-stub.o)
+                0x10005b94                strlen
+ .text          0x10005bf8      0xfb0 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-svfscanf.o)
+                0x10005bf8                __ssvfscanf_r
+ .text          0x10006ba8       0x28 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-writer.o)
+                0x10006ba8                _write_r
+ .text          0x10006bd0       0x24 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-closer.o)
+                0x10006bd0                _close_r
+ .text          0x10006bf4      0x274 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-freer.o)
+                0x10006bf4                _malloc_trim_r
+                0x10006c94                _free_r
+ .text          0x10006e68        0xc /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-iswspace.o)
+                0x10006e68                iswspace
+ .text          0x10006e74       0x18 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-iswspace_l.o)
+                0x10006e74                iswspace_l
+ .text          0x10006e8c       0x6c /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-locale.o)
+                0x10006e8c                _setlocale_r
+                0x10006ed0                __locale_mb_cur_max
+                0x10006ee0                setlocale
+ .text          0x10006ef8       0x14 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-localeconv.o)
+                0x10006ef8                __localeconv_l
+                0x10006efc                _localeconv_r
+                0x10006f04                localeconv
+ .text          0x10006f0c       0x28 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-lseekr.o)
+                0x10006f0c                _lseek_r
+ .text          0x10006f34       0x94 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-mbrtowc.o)
+                0x10006f34                _mbrtowc_r
+                0x10006f7c                mbrtowc
+ .text          0x10006fc8       0x44 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-mbtowc_r.o)
+                0x10006fc8                _mbtowc_r
+                0x10006fe0                __ascii_mbtowc
+ .text          0x1000700c       0x9c /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-memmove.o)
+                0x1000700c                memmove
+ .text          0x100070a8       0x28 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-readr.o)
+                0x100070a8                _read_r
+ .text          0x100070d0       0x6c /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-sccl.o)
+                0x100070d0                __sccl
+ .text          0x1000713c        0x8 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-sf_nan.o)
+                0x1000713c                nanf
+ .text          0x10007144     0x1034 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strtod.o)
+                0x10007144                _strtod_l
+                0x10007fd0                _strtod_r
+                0x10007fe0                strtod_l
+                0x10007ff8                strtod
+                0x10008014                strtof_l
+                0x100080c4                strtof
  .text.unlikely
-                0x10008168       0x30 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strtod.o)
- .text          0x10008198      0x170 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strtol.o)
-                0x100082d0                _strtol_r
-                0x100082d8                strtol_l
-                0x100082f0                strtol
- .text          0x10008308      0x1e4 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strtoll.o)
-                0x100084b4                _strtoll_r
-                0x100084bc                strtoll_l
-                0x100084d4                strtoll
- .text          0x100084ec      0x180 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strtoul.o)
-                0x10008634                _strtoul_r
-                0x1000863c                strtoul_l
-                0x10008654                strtoul
- .text          0x1000866c      0x204 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strtoull.o)
-                0x10008838                _strtoull_r
-                0x10008840                strtoull_l
-                0x10008858                strtoull
- .text          0x10008870      0xc00 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-svfiscanf.o)
-                0x10008870                _sungetc_r
-                0x100088f0                __ssrefill_r
-                0x10008930                _sfread_r
-                0x100089bc                __ssvfiscanf_r
- .text          0x10009470      0x184 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-ungetc.o)
-                0x10009470                __submore
-                0x100094f4                _ungetc_r
-                0x100095dc                ungetc
- .text          0x100095f4       0x2c /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-wctomb_r.o)
-                0x100095f4                _wctomb_r
-                0x10009604                __ascii_wctomb
- .text          0x10009620      0x1a4 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-fflush.o)
-                0x10009620                __sflush_r
-                0x10009770                _fflush_r
-                0x1000979c                fflush
- .text          0x100097c4      0x224 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-findfp.o)
-                0x100097c8                _cleanup_r
-                0x100098c4                __sfmoreglue
-                0x100098f4                __sfp
-                0x10009980                _cleanup
-                0x10009998                __sinit
-                0x100099a8                __sfp_lock_acquire
-                0x100099ac                __sfp_lock_release
-                0x100099b0                __sinit_lock_acquire
-                0x100099b4                __sinit_lock_release
-                0x100099b8                __fp_lock_all
-                0x100099d0                __fp_unlock_all
- .text          0x100099e8       0x90 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-fwalk.o)
-                0x100099e8                _fwalk
-                0x10009a2c                _fwalk_reent
- .text          0x10009a78      0x5ec /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-gdtoa-gethex.o)
-                0x10009b20                __gethex
- .text          0x1000a064      0x1cc /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-gdtoa-hexnan.o)
-                0x1000a064                __match
-                0x1000a090                __hexnan
- .text          0x1000a230      0x984 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-mprec.o)
-                0x1000a230                _Balloc
-                0x1000a280                _Bfree
-                0x1000a294                __multadd
-                0x1000a320                __s2b
-                0x1000a3b0                __hi0bits
-                0x1000a3e8                __lo0bits
-                0x1000a444                __i2b
-                0x1000a458                __multiply
-                0x1000a5d0                __pow5mult
-                0x1000a690                __lshift
-                0x1000a758                __mcmp
-                0x1000a78c                __mdiff
-                0x1000a8b0                __ulp
-                0x1000a8fc                __b2d
-                0x1000a9b8                __d2b
-                0x1000aa74                __ratio
-                0x1000aae8                _mprec_log10
-                0x1000ab1c                __copybits
-                0x1000ab5c                __any_on
- .text          0x1000abb4        0xc /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-s_nan.o)
-                0x1000abb4                nan
- .text          0x1000abc0       0x8c /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strncmp.o)
-                0x1000abc0                strncmp
- .text          0x1000ac4c       0xa8 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-fclose.o)
-                0x1000ac4c                _fclose_r
-                0x1000ace0                fclose
- .text          0x1000acf4       0x10 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libnosys.a(close.o)
-                0x1000acf4                _close
- .text          0x1000ad04       0x10 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libnosys.a(lseek.o)
-                0x1000ad04                _lseek
+                0x10008178       0x30 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strtod.o)
+ .text          0x100081a8      0x170 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strtol.o)
+                0x100082e0                _strtol_r
+                0x100082e8                strtol_l
+                0x10008300                strtol
+ .text          0x10008318      0x1e4 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strtoll.o)
+                0x100084c4                _strtoll_r
+                0x100084cc                strtoll_l
+                0x100084e4                strtoll
+ .text          0x100084fc      0x180 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strtoul.o)
+                0x10008644                _strtoul_r
+                0x1000864c                strtoul_l
+                0x10008664                strtoul
+ .text          0x1000867c      0x204 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strtoull.o)
+                0x10008848                _strtoull_r
+                0x10008850                strtoull_l
+                0x10008868                strtoull
+ .text          0x10008880      0xc00 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-svfiscanf.o)
+                0x10008880                _sungetc_r
+                0x10008900                __ssrefill_r
+                0x10008940                _sfread_r
+                0x100089cc                __ssvfiscanf_r
+ .text          0x10009480      0x184 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-ungetc.o)
+                0x10009480                __submore
+                0x10009504                _ungetc_r
+                0x100095ec                ungetc
+ .text          0x10009604       0x2c /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-wctomb_r.o)
+                0x10009604                _wctomb_r
+                0x10009614                __ascii_wctomb
+ .text          0x10009630      0x1a4 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-fflush.o)
+                0x10009630                __sflush_r
+                0x10009780                _fflush_r
+                0x100097ac                fflush
+ .text          0x100097d4      0x224 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-findfp.o)
+                0x100097d8                _cleanup_r
+                0x100098d4                __sfmoreglue
+                0x10009904                __sfp
+                0x10009990                _cleanup
+                0x100099a8                __sinit
+                0x100099b8                __sfp_lock_acquire
+                0x100099bc                __sfp_lock_release
+                0x100099c0                __sinit_lock_acquire
+                0x100099c4                __sinit_lock_release
+                0x100099c8                __fp_lock_all
+                0x100099e0                __fp_unlock_all
+ .text          0x100099f8       0x90 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-fwalk.o)
+                0x100099f8                _fwalk
+                0x10009a3c                _fwalk_reent
+ .text          0x10009a88      0x5ec /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-gdtoa-gethex.o)
+                0x10009b30                __gethex
+ .text          0x1000a074      0x1cc /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-gdtoa-hexnan.o)
+                0x1000a074                __match
+                0x1000a0a0                __hexnan
+ .text          0x1000a240      0x984 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-mprec.o)
+                0x1000a240                _Balloc
+                0x1000a290                _Bfree
+                0x1000a2a4                __multadd
+                0x1000a330                __s2b
+                0x1000a3c0                __hi0bits
+                0x1000a3f8                __lo0bits
+                0x1000a454                __i2b
+                0x1000a468                __multiply
+                0x1000a5e0                __pow5mult
+                0x1000a6a0                __lshift
+                0x1000a768                __mcmp
+                0x1000a79c                __mdiff
+                0x1000a8c0                __ulp
+                0x1000a90c                __b2d
+                0x1000a9c8                __d2b
+                0x1000aa84                __ratio
+                0x1000aaf8                _mprec_log10
+                0x1000ab2c                __copybits
+                0x1000ab6c                __any_on
+ .text          0x1000abc4        0xc /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-s_nan.o)
+                0x1000abc4                nan
+ .text          0x1000abd0       0x8c /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strncmp.o)
+                0x1000abd0                strncmp
+ .text          0x1000ac5c       0xa8 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-fclose.o)
+                0x1000ac5c                _fclose_r
+                0x1000acf0                fclose
+ .text          0x1000ad04       0x10 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libnosys.a(close.o)
+                0x1000ad04                _close
+ .text          0x1000ad14       0x10 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libnosys.a(lseek.o)
+                0x1000ad14                _lseek
  *(.fini)
- .fini          0x1000ad14        0x4 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crti.o
-                0x1000ad14                _fini
- .fini.__stub   0x1000ad18       0x90 linker stubs
+ .fini          0x1000ad24        0x4 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crti.o
+                0x1000ad24                _fini
+ .fini.__stub   0x1000ad28       0x90 linker stubs
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -2919,305 +2919,305 @@ LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/crt0
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
  *(.eh_frame*)
- .eh_frame      0x1000ada8        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
-                0x1000ada8                . = ALIGN (0x4)
+ .eh_frame      0x1000adb8        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
+                0x1000adb8                . = ALIGN (0x4)
 
-.glue_7         0x1000ada8        0x0
- .glue_7        0x1000ada8        0x0 linker stubs
+.glue_7         0x1000adb8        0x0
+ .glue_7        0x1000adb8        0x0 linker stubs
 
-.glue_7t        0x1000ada8        0x0
- .glue_7t       0x1000ada8        0x0 linker stubs
+.glue_7t        0x1000adb8        0x0
+ .glue_7t       0x1000adb8        0x0 linker stubs
 
-.vfp11_veneer   0x1000ada8        0x0
- .vfp11_veneer  0x1000ada8        0x0 linker stubs
+.vfp11_veneer   0x1000adb8        0x0
+ .vfp11_veneer  0x1000adb8        0x0 linker stubs
 
-.v4_bx          0x1000ada8        0x0
- .v4_bx         0x1000ada8        0x0 linker stubs
+.v4_bx          0x1000adb8        0x0
+ .v4_bx         0x1000adb8        0x0 linker stubs
 
-.iplt           0x1000ada8        0x0
- .iplt          0x1000ada8        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
+.iplt           0x1000adb8        0x0
+ .iplt          0x1000adb8        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
 
-.rodata         0x1000ada8     0x1d50
+.rodata         0x1000adb8     0x1d58
  *(EXCLUDE_FILE(*libm.a: *libc.a:*lib_a-mem*.o *libgcc.a:) .rodata*)
  .rodata.System
-                0x1000ada8       0x1c CMakeFiles/seatsensor.dir/seatsensor.c.obj
+                0x1000adb8       0x1c CMakeFiles/seatsensor.dir/seatsensor.c.obj
  .rodata.System.str1.4
-                0x1000adc4      0x11b CMakeFiles/seatsensor.dir/seatsensor.c.obj
- *fill*         0x1000aedf        0x1 
+                0x1000add4      0x11b CMakeFiles/seatsensor.dir/seatsensor.c.obj
+ *fill*         0x1000aeef        0x1 
  .rodata.getMap.str1.4
-                0x1000aee0        0x3 CMakeFiles/seatsensor.dir/seatsensor.c.obj
- *fill*         0x1000aee3        0x1 
+                0x1000aef0        0x3 CMakeFiles/seatsensor.dir/seatsensor.c.obj
+ *fill*         0x1000aef3        0x1 
  .rodata.listThresholds.str1.4
-                0x1000aee4       0x5e CMakeFiles/seatsensor.dir/seatsensor.c.obj
- *fill*         0x1000af42        0x2 
+                0x1000aef4       0x5e CMakeFiles/seatsensor.dir/seatsensor.c.obj
+ *fill*         0x1000af52        0x2 
  .rodata.main.str1.4
-                0x1000af44       0x42 CMakeFiles/seatsensor.dir/seatsensor.c.obj
- *fill*         0x1000af86        0x2 
+                0x1000af54       0x45 CMakeFiles/seatsensor.dir/seatsensor.c.obj
+ *fill*         0x1000af99        0x3 
  .rodata.selectChannel.str1.4
-                0x1000af88       0x48 CMakeFiles/seatsensor.dir/seatsensor.c.obj
+                0x1000af9c       0x48 CMakeFiles/seatsensor.dir/seatsensor.c.obj
  .rodata.GetBoardID.str1.4
-                0x1000afd0        0x5 CMakeFiles/seatsensor.dir/common.c.obj
- *fill*         0x1000afd5        0x3 
+                0x1000afe4        0x5 CMakeFiles/seatsensor.dir/common.c.obj
+ *fill*         0x1000afe9        0x3 
  .rodata.__func__.4737
-                0x1000afd8       0x1a CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x1000aff2        0x2 
+                0x1000afec       0x1a CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ *fill*         0x1000b006        0x2 
  .rodata.__func__.4751
-                0x1000aff4        0xc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x1000b008        0xc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .rodata.__func__.4759
-                0x1000b000       0x17 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x1000b017        0x1 
+                0x1000b014       0x17 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ *fill*         0x1000b02b        0x1 
  .rodata.__func__.4763
-                0x1000b018        0xf CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x1000b027        0x1 
- .rodata.__func__.4802
-                0x1000b028       0x13 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x1000b02c        0xf CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  *fill*         0x1000b03b        0x1 
+ .rodata.__func__.4802
+                0x1000b03c       0x13 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ *fill*         0x1000b04f        0x1 
  .rodata.__func__.4824
-                0x1000b03c       0x1a CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x1000b056        0x2 
+                0x1000b050       0x1a CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ *fill*         0x1000b06a        0x2 
  .rodata.insert_branch_and_link.str1.4
-                0x1000b058       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x1000b06c       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .rodata.irq_add_shared_handler.str1.4
-                0x1000b068       0xd9 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x1000b141        0x3 
+                0x1000b07c       0xd9 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ *fill*         0x1000b155        0x3 
  .rodata.irq_add_tail_to_free_list.str1.4
-                0x1000b144       0x3a CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x1000b17e        0x2 
+                0x1000b158       0x3a CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ *fill*         0x1000b192        0x2 
  .rodata.irq_remove_handler.str1.4
-                0x1000b180       0x2a CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x1000b1aa        0x2 
+                0x1000b194       0x2a CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ *fill*         0x1000b1be        0x2 
  .rodata.irq_set_exclusive_handler.str1.4
-                0x1000b1ac       0x36 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x1000b1e2        0x2 
+                0x1000b1c0       0x36 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ *fill*         0x1000b1f6        0x2 
  .rodata.make_branch.str1.4
-                0x1000b1e4       0x69 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x1000b24d        0x3 
+                0x1000b1f8       0x69 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ *fill*         0x1000b261        0x3 
  .rodata.__func__.5648
-                0x1000b250       0x15 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x1000b265        0x3 
+                0x1000b264       0x15 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x1000b279        0x3 
  .rodata.__func__.5966
-                0x1000b268        0xc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x1000b27c        0xc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
  .rodata.__func__.5973
-                0x1000b274       0x12 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x1000b286        0x2 
+                0x1000b288       0x12 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x1000b29a        0x2 
  .rodata.__func__.5989
-                0x1000b288        0xf CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x1000b297        0x1 
+                0x1000b29c        0xf CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x1000b2ab        0x1 
  .rodata.__func__.6011
-                0x1000b298        0xd CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x1000b2a5        0x3 
+                0x1000b2ac        0xd CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x1000b2b9        0x3 
  .rodata.__func__.6234
-                0x1000b2a8        0xa CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x1000b2b2        0x2 
- .rodata.__func__.6239
-                0x1000b2b4       0x12 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x1000b2bc        0xa CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
  *fill*         0x1000b2c6        0x2 
+ .rodata.__func__.6239
+                0x1000b2c8       0x12 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x1000b2da        0x2 
  .rodata.__func__.6254
-                0x1000b2c8       0x17 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x1000b2df        0x1 
+                0x1000b2dc       0x17 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x1000b2f3        0x1 
  .rodata.__func__.6265
-                0x1000b2e0       0x15 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x1000b2f5        0x3 
+                0x1000b2f4       0x15 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x1000b309        0x3 
  .rodata.__func__.6282
-                0x1000b2f8       0x1a CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x1000b312        0x2 
+                0x1000b30c       0x1a CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x1000b326        0x2 
  .rodata.add_alarm_under_lock.str1.4
-                0x1000b314       0x28 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x1000b328       0x28 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
                                  0x2b (size before relaxing)
  .rodata.alarm_pool_alarm_callback.str1.4
-                0x1000b33c       0xe2 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x1000b41e        0x2 
+                0x1000b350       0xe2 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x1000b432        0x2 
  .rodata.alarm_pool_dump_key.str1.4
-                0x1000b420       0x33 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x1000b453        0x1 
+                0x1000b434       0x33 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x1000b467        0x1 
  .rodata.alarm_pool_get_default.str1.4
-                0x1000b454       0x21 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x1000b475        0x3 
+                0x1000b468       0x21 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x1000b489        0x7 
  .rodata.at_the_end_of_time
-                0x1000b478        0x8 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
-                0x1000b478                at_the_end_of_time
+                0x1000b490        0x8 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+                0x1000b490                at_the_end_of_time
  .rodata.ph_add_child_node.str1.4
-                0x1000b480       0x92 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x1000b512        0x2 
+                0x1000b498       0x92 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x1000b52a        0x2 
  .rodata.repeating_timer_callback.str1.4
-                0x1000b514       0x47 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x1000b55b        0x1 
+                0x1000b52c       0x47 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
+ *fill*         0x1000b573        0x1 
  .rodata.sleep_until.str1.4
-                0x1000b55c       0x4d CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
- *fill*         0x1000b5a9        0x3 
- .rodata.__func__.4173
-                0x1000b5ac       0x15 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x1000b574       0x4d CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_time/time.c.obj
  *fill*         0x1000b5c1        0x3 
+ .rodata.__func__.4173
+                0x1000b5c4       0x15 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ *fill*         0x1000b5d9        0x3 
  .rodata.__func__.4535
-                0x1000b5c4       0x1a CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x1000b5dc       0x1a CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .rodata.busy_wait_us.str1.4
-                0x1000b5de       0x5d CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- *fill*         0x1000b5de        0x2 
+                0x1000b5f6       0x5d CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ *fill*         0x1000b5f6        0x2 
  .rodata.hardware_alarm_claim.str1.4
-                0x1000b5e0       0x22 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- *fill*         0x1000b602        0x2 
+                0x1000b5f8       0x22 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ *fill*         0x1000b61a        0x2 
  .rodata.hardware_alarm_set_target.str1.4
-                0x1000b604       0x61 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- *fill*         0x1000b665        0x3 
+                0x1000b61c       0x61 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ *fill*         0x1000b67d        0x3 
  .rodata.__func__.5664
-                0x1000b668        0xc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x1000b680        0xc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
  .rodata.__func__.5671
-                0x1000b674       0x12 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
- *fill*         0x1000b686        0x2 
+                0x1000b68c       0x12 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+ *fill*         0x1000b69e        0x2 
  .rodata.__func__.5757
-                0x1000b688       0x13 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
- *fill*         0x1000b69b        0x1 
+                0x1000b6a0       0x13 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+ *fill*         0x1000b6b3        0x1 
  .rodata.__func__.5775
-                0x1000b69c       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x1000b6b4       0x18 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
  .rodata.ph_add_child_node.str1.4
-                0x1000b6b4       0x92 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x1000b6cc       0x92 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
  .rodata.ph_remove_and_free_node.str1.4
-                0x1000b6b4       0x1e CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x1000b6cc       0x1e CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
                                  0x26 (size before relaxing)
- *fill*         0x1000b6d2        0x2 
+ *fill*         0x1000b6ea        0x2 
  .rodata.ph_remove_any_head.str1.4
-                0x1000b6d4       0x88 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x1000b6ec       0x88 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_util/pheap.c.obj
  .rodata.__func__.4669
-                0x1000b75c        0xb CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
- *fill*         0x1000b767        0x1 
+                0x1000b774        0xb CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+ *fill*         0x1000b77f        0x1 
  .rodata.str1.4
-                0x1000b768       0x85 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x1000b780       0x85 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/common/pico_sync/mutex.c.obj
                                  0xe5 (size before relaxing)
- *fill*         0x1000b7ed        0x3 
+ *fill*         0x1000b805        0x3 
  .rodata.__assert_func.str1.4
-                0x1000b7f0       0x3f CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x1000b808       0x3f CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
                                  0x43 (size before relaxing)
- *fill*         0x1000b82f        0x1 
+ *fill*         0x1000b847        0x1 
  .rodata.__func__.5782
-                0x1000b830        0xd CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- *fill*         0x1000b83d        0x3 
+                0x1000b848        0xd CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ *fill*         0x1000b855        0x3 
  .rodata.panic.str1.4
-                0x1000b840       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x1000b858       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
                                  0x12 (size before relaxing)
  .rodata.runtime_init.str1.4
-                0x1000b850       0x5d CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- *fill*         0x1000b8ad        0x3 
+                0x1000b868       0x5d CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ *fill*         0x1000b8c5        0x3 
  .rodata.__func__.4719
-                0x1000b8b0       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x1000b8c8       0x10 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .rodata.clock_configure.str1.4
-                0x1000b8c0       0x53 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
- *fill*         0x1000b913        0x1 
+                0x1000b8d8       0x53 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+ *fill*         0x1000b92b        0x1 
  .rodata.__func__.4376
-                0x1000b914        0x9 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
- *fill*         0x1000b91d        0x3 
+                0x1000b92c        0x9 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+ *fill*         0x1000b935        0x3 
  .rodata.pll_init.str1.4
-                0x1000b920      0x137 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
- *fill*         0x1000ba57        0x1 
+                0x1000b938      0x137 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+ *fill*         0x1000ba6f        0x1 
  .rodata._vsnprintf
-                0x1000ba58      0x1e0 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x1000ba70      0x1e0 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .rodata._ftoa.str1.4
-                0x1000bc38       0x15 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- *fill*         0x1000bc4d        0x3 
+                0x1000bc50       0x15 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ *fill*         0x1000bc65        0x3 
  .rodata.pow10.5378
-                0x1000bc50       0x50 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x1000bc68       0x50 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .rodata.__aeabi_double_init.str1.4
-                0x1000bca0       0xa4 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x1000bcb8       0xa4 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
  .rodata.__func__.4688
-                0x1000bd44       0x14 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x1000bd5c       0x14 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
  .rodata.__aeabi_float_init.str1.4
-                0x1000bd58       0x76 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x1000bd70       0x76 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
                                  0x7a (size before relaxing)
- *fill*         0x1000bdce        0x2 
+ *fill*         0x1000bde6        0x2 
  .rodata.__func__.4689
-                0x1000bdd0       0x13 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
- *fill*         0x1000bde3        0x1 
+                0x1000bde8       0x13 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+ *fill*         0x1000bdfb        0x1 
  .rodata.__bi_44
-                0x1000bde4        0xc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
- .rodata.__bi_75
-                0x1000bdf0        0xc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
- .rodata.__bi_81
                 0x1000bdfc        0xc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .rodata.__bi_75
+                0x1000be08        0xc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .rodata.__bi_81
+                0x1000be14        0xc CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.str1.4
-                0x1000be08       0x40 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x1000be20       0x40 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.crlf_str.6012
-                0x1000be48        0x2 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- *fill*         0x1000be4a        0x2 
+                0x1000be60        0x2 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ *fill*         0x1000be62        0x2 
  .rodata.__func__.4403
-                0x1000be4c       0x12 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
- *fill*         0x1000be5e        0x2 
+                0x1000be64       0x12 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+ *fill*         0x1000be76        0x2 
  .rodata.__func__.4413
-                0x1000be60       0x14 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+                0x1000be78       0x14 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
  .rodata.__func__.4430
-                0x1000be74        0xd CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
- *fill*         0x1000be81        0x3 
+                0x1000be8c        0xd CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+ *fill*         0x1000be99        0x3 
  .rodata.str1.4
-                0x1000be84      0x156 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
- *fill*         0x1000bfda        0x2 
- .rodata        0x1000bfdc      0x101 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-ctype_.o)
-                0x1000bfdc                _ctype_
- *fill*         0x1000c0dd        0x3 
- .rodata        0x1000c0e0        0x4 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-impure.o)
-                0x1000c0e0                _global_impure_ptr
- .rodata        0x1000c0e4      0x3e6 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-svfscanf.o)
- *fill*         0x1000c4ca        0x2 
+                0x1000be9c      0x156 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+ *fill*         0x1000bff2        0x2 
+ .rodata        0x1000bff4      0x101 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-ctype_.o)
+                0x1000bff4                _ctype_
+ *fill*         0x1000c0f5        0x3 
+ .rodata        0x1000c0f8        0x4 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-impure.o)
+                0x1000c0f8                _global_impure_ptr
+ .rodata        0x1000c0fc      0x3e6 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-svfscanf.o)
+ *fill*         0x1000c4e2        0x2 
  .rodata.str1.4
-                0x1000c4cc        0x5 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-svfscanf.o)
+                0x1000c4e4        0x5 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-svfscanf.o)
                                   0x9 (size before relaxing)
- *fill*         0x1000c4d1        0x3 
+ *fill*         0x1000c4e9        0x3 
  .rodata.str1.4
-                0x1000c4d4        0xe /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-locale.o)
+                0x1000c4ec        0xe /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-locale.o)
                                  0x12 (size before relaxing)
  .rodata.str1.4
-                0x1000c4e2        0x1 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-mbrtowc.o)
- *fill*         0x1000c4e2        0x6 
- .rodata        0x1000c4e8      0x120 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strtod.o)
+                0x1000c4fa        0x1 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-mbrtowc.o)
+ *fill*         0x1000c4fa        0x6 
+ .rodata        0x1000c500      0x120 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strtod.o)
  .rodata.str1.4
-                0x1000c608       0x10 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strtod.o)
+                0x1000c620       0x10 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-strtod.o)
                                  0x11 (size before relaxing)
- .rodata        0x1000c618      0x2aa /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-svfiscanf.o)
- *fill*         0x1000c8c2        0x2 
- .rodata        0x1000c8c4      0x100 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-gdtoa-gethex.o)
-                0x1000c8c4                __hexdig
- .rodata        0x1000c9c4        0xc /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-lnumeric.o)
-                0x1000c9c4                _C_numeric_locale
+ .rodata        0x1000c630      0x2aa /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-svfiscanf.o)
+ *fill*         0x1000c8da        0x2 
+ .rodata        0x1000c8dc      0x100 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-gdtoa-gethex.o)
+                0x1000c8dc                __hexdig
+ .rodata        0x1000c9dc        0xc /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-lnumeric.o)
+                0x1000c9dc                _C_numeric_locale
  .rodata.str1.4
-                0x1000c9d0        0x5 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-lnumeric.o)
- .rodata        0x1000c9d0      0x128 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-mprec.o)
-                0x1000c9e0                __mprec_tinytens
-                0x1000ca08                __mprec_bigtens
-                0x1000ca30                __mprec_tens
-                0x1000caf8                . = ALIGN (0x4)
+                0x1000c9e8        0x5 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-lnumeric.o)
+ .rodata        0x1000c9e8      0x128 /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libg.a(lib_a-mprec.o)
+                0x1000c9f8                __mprec_tinytens
+                0x1000ca20                __mprec_bigtens
+                0x1000ca48                __mprec_tens
+                0x1000cb10                . = ALIGN (0x4)
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.flashdata*)))
-                0x1000caf8                . = ALIGN (0x4)
+                0x1000cb10                . = ALIGN (0x4)
 
-.rel.dyn        0x1000caf8        0x0
- .rel.iplt      0x1000caf8        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
+.rel.dyn        0x1000cb10        0x0
+ .rel.iplt      0x1000cb10        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x1000caf8                __exidx_start = .
+                0x1000cb10                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x1000caf8                __exidx_end = .
-                0x1000caf8                . = ALIGN (0x4)
-                0x1000caf8                __binary_info_start = .
+                0x1000cb10                __exidx_end = .
+                0x1000cb10                . = ALIGN (0x4)
+                0x1000cb10                __binary_info_start = .
 
-.binary_info    0x1000caf8       0x1c
+.binary_info    0x1000cb10       0x1c
  *(.binary_info.keep.*)
  .binary_info.keep.__bi_ptr22
-                0x1000caf8        0x4 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
- .binary_info.keep.__bi_ptr30
-                0x1000cafc        0x4 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
- .binary_info.keep.__bi_ptr38
-                0x1000cb00        0x4 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
- .binary_info.keep.__bi_ptr44
-                0x1000cb04        0x4 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
- .binary_info.keep.__bi_ptr50
-                0x1000cb08        0x4 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
- .binary_info.keep.__bi_ptr75
-                0x1000cb0c        0x4 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
- .binary_info.keep.__bi_ptr81
                 0x1000cb10        0x4 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .binary_info.keep.__bi_ptr30
+                0x1000cb14        0x4 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .binary_info.keep.__bi_ptr38
+                0x1000cb18        0x4 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .binary_info.keep.__bi_ptr44
+                0x1000cb1c        0x4 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .binary_info.keep.__bi_ptr50
+                0x1000cb20        0x4 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .binary_info.keep.__bi_ptr75
+                0x1000cb24        0x4 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+ .binary_info.keep.__bi_ptr81
+                0x1000cb28        0x4 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  *(.binary_info.*)
-                0x1000cb14                __binary_info_end = .
-                0x1000cb14                . = ALIGN (0x4)
-                0x1000cb14                __etext = .
+                0x1000cb2c                __binary_info_end = .
+                0x1000cb2c                . = ALIGN (0x4)
+                0x1000cb2c                __etext = .
 
 .ram_vector_table
                 0x20000000       0xc0
@@ -3226,7 +3226,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/crt0
                 0x20000000       0xc0 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
                 0x20000000                ram_vector_table
 
-.data           0x200000c0      0xf58 load address 0x1000cb14
+.data           0x200000c0      0xf58 load address 0x1000cb2c
                 0x200000c0                __data_start__ = .
  *(vtable)
  *(.time_critical*)
@@ -3342,33 +3342,33 @@ LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/crt0
                 0x20001018                __data_end__ = .
 
 .tm_clone_table
-                0x20001018        0x0 load address 0x1000da6c
+                0x20001018        0x0 load address 0x1000da84
  .tm_clone_table
                 0x20001018        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
  .tm_clone_table
                 0x20001018        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtend.o
 
-.igot.plt       0x20001018        0x0 load address 0x1000da6c
+.igot.plt       0x20001018        0x0 load address 0x1000da84
  .igot.plt      0x20001018        0x0 /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtbegin.o
 
 .uninitialized_data
-                0x20001018        0x0 load address 0x1000da6c
+                0x20001018        0x0 load address 0x1000da84
                 0x20001018                . = ALIGN (0x4)
  *(.uninitialized_data*)
 
-.scratch_x      0x20040000        0x0 load address 0x1000da6c
+.scratch_x      0x20040000        0x0 load address 0x1000da84
                 0x20040000                __scratch_x_start__ = .
  *(.scratch_x.*)
                 0x20040000                . = ALIGN (0x4)
                 0x20040000                __scratch_x_end__ = .
-                0x1000da6c                __scratch_x_source__ = LOADADDR (.scratch_x)
+                0x1000da84                __scratch_x_source__ = LOADADDR (.scratch_x)
 
-.scratch_y      0x20041000        0x0 load address 0x1000da6c
+.scratch_y      0x20041000        0x0 load address 0x1000da84
                 0x20041000                __scratch_y_start__ = .
  *(.scratch_y.*)
                 0x20041000                . = ALIGN (0x4)
                 0x20041000                __scratch_y_end__ = .
-                0x1000da6c                __scratch_y_source__ = LOADADDR (.scratch_y)
+                0x1000da84                __scratch_y_source__ = LOADADDR (.scratch_y)
 
 .bss            0x20001018      0x6a0
                 0x20001018                . = ALIGN (0x4)
@@ -3454,8 +3454,8 @@ LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/crt0
  *(.stack*)
  .stack         0x20041000      0x800 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
 
-.flash_end      0x1000da6c        0x0
-                0x1000da6c                __flash_binary_end = .
+.flash_end      0x1000da84        0x0
+                0x1000da84                __flash_binary_end = .
                 0x20040000                __StackLimit = (ORIGIN (RAM) + LENGTH (RAM))
                 0x20041000                __StackOneTop = (ORIGIN (SCRATCH_X) + LENGTH (SCRATCH_X))
                 0x20042000                __StackTop = (ORIGIN (SCRATCH_Y) + LENGTH (SCRATCH_Y))
@@ -3536,7 +3536,7 @@ LOAD CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/lib/tinyusb/src/common/tusb
 LOAD CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 LOAD CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
 LOAD CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
-LOAD /tmp/ccehVJrL.o
+LOAD /tmp/ccQBsSAp.o
 LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libstdc++.a
 LOAD /usr/lib/gcc/arm-none-eabi/7.3.1/../../../arm-none-eabi/lib/thumb/v6-m/libm.a
 START GROUP
@@ -3636,7 +3636,7 @@ OUTPUT(seatsensor.elf elf32-littlearm)
  .ARM.attributes
                 0x000006e4       0x32 CMakeFiles/seatsensor.dir/home/pi/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
  .ARM.attributes
-                0x00000716       0x22 /tmp/ccehVJrL.o
+                0x00000716       0x22 /tmp/ccQBsSAp.o
  .ARM.attributes
                 0x00000738       0x1e /usr/lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/libgcc.a(_dvmd_tls.o)
  .ARM.attributes
