@@ -34,7 +34,7 @@ typedef	struct {
 #ifdef	main_c
 		StoredConfig	config = {
 			"MagickcigaM",
-			{18, 17, 16},
+			{16, 17, 18},
 			{
 				1100, // 1111
 				1000, // 1110

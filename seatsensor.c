@@ -47,6 +47,7 @@ void	selectChannel(int idx, int verbose) {
 	adc_select_input(2);
 }
 int	readn = 0;
+int	channel = 0;
 void	System(uint32_t cmd, char *p1, char *p2, char *p3, char *p4) {
 	switch (cmd) {
 	case CMD_UART_DATA: {
@@ -74,6 +75,7 @@ void	System(uint32_t cmd, char *p1, char *p2, char *p3, char *p4) {
 			adc_select_input(2);
 			selectChannel(idx, 1);
 		*/	readn = val;
+			channel = idx;
 		}
 	}
 	break;
@@ -159,6 +161,7 @@ int	MeasureADC(int idx) {
 #endif
 }
 int	main(void) {
+	int	i;
 	uint32_t	owner;
 	uint64_t	seconds = 0;
 	initSys(&sys, System);
@@ -167,7 +170,6 @@ int	main(void) {
 
 //	adc_set_temp_sensor_enabled(true); // Enable on board temp sensor
     
-	
 //	sleep_ms(100);
 	for ( ; ; ) {
 		loopSys(&sys);
@@ -176,8 +178,10 @@ int	main(void) {
 		if (readn) {
 			printf("\r");
 			// \033[<N>A
-			for (int i = 0; i < 8; i++) {
-				int	v = MeasureADC2(i);
+			//for (int i = 0; i < 8; i++) {
+			i = channel;
+			{
+				int	v = MeasureADC(i);
 				if (i == 4)
 					printf("\r\n");
 				printf("%2d: %4d %2d, ", i, peaks[i], 15 - v);
