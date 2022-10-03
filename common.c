@@ -7,7 +7,7 @@
 #include	"project.h"
 #include	"common.h"
 
-
+/*
 bool __no_inline_not_in_flash_func(get_bootsel_button)() {
     const uint CS_PIN_INDEX = 1;
 
@@ -37,7 +37,7 @@ bool __no_inline_not_in_flash_func(get_bootsel_button)() {
 
     return button_state;
 }
-
+*/
 void	GetBoardID(char *p) {
 	int		l = 0;
 
@@ -74,7 +74,14 @@ void	UpdateConfig(SystemConfig *s) {
 	if (memcmp(sc, &config, sizeof(config))) {
 		SaveConfig(s);
 	}
-} 
+}
+
+uint storage_get_flash_capacity(void) {
+    uint8_t txbuf[4] = {0x9f};
+    uint8_t rxbuf[4] = {0};
+    flash_do_cmd(txbuf, rxbuf, 4);
+    return 1 << rxbuf[3];
+}
 
 void	initSys(SystemConfig *s, void (*f)(uint32_t, char *, char *, char *, char *)) {
 	StoredConfig	*sc;
@@ -105,6 +112,10 @@ void	initSys(SystemConfig *s, void (*f)(uint32_t, char *, char *, char *, char *
 		tt = tt + FLASH_SECTOR_SIZE - (tt % FLASH_SECTOR_SIZE);
 	flash_start = (char *) tt;
 	flash_addr = tt - (uintptr_t) XIP_BASE;
+	uint32_t	ints = save_and_disable_interrupts();
+	s->flashsize = storage_get_flash_capacity();
+
+	restore_interrupts (ints);
 	sc = (StoredConfig *) flash_start;
 	if (strcmp(sc->magic, config.magic))
 		SaveConfig(s);
@@ -118,13 +129,15 @@ void	initSys(SystemConfig *s, void (*f)(uint32_t, char *, char *, char *, char *
 }
 
 void	resetPico(void) {
-	initSys(&sys, sys.cb);
+	//initSys(&sys, sys.cb);
 	//sys.usb_ack = 0;
 	watchdog_reboot(0, 0, 0);
+	sleep_ms(200);
 }
+extern	int	bootsel_button;
 
 void	LoopButton(SystemConfig *s) {
-	int	r = get_bootsel_button();	
+	int		r = bootsel_button; // get_bootsel_button();	
 	uint64_t	d;
 	if (s->bootsel) {
 		int	k = 0;
@@ -143,14 +156,53 @@ void	LoopButton(SystemConfig *s) {
 			s->bootsel_start = s->unow;
 		} else {
 			gpio_put(PICO_DEFAULT_LED_PIN, 0 ^ PICO_DEFAULT_LED_PIN_INVERTED);
-			if (d > BOOTSEL_COUNTER)
+			if (d > BOOTSEL_COUNTER) {
+				
 				reset_usb_boot(0, 0);
-			else if (d > RESET_COUNTER) 
+				sleep_ms(100);
+			} else if (d > RESET_COUNTER) 
 				resetPico();
 			else if (s->cb)
-				(*s->cb)(CMD_BUTTON_PRESS, (char *) ((int) (d & 0xffff)), NULL, NULL, NULL);
+				(*s->cb)(CMD_BUTTON_PRESS, (char *) ((int) ((d / 1000) & 0xffff)), NULL, NULL, NULL);
 		}
 	}
+}
+
+int	TouchLoop(int GPIN) {
+	int		i = 0;
+	static int	z = 0, zz = 0;
+
+	gpio_init(GPIN);
+	gpio_set_dir(GPIN, 1);
+	gpio_put(GPIN, 1);
+	gpio_init(GPIN);
+	gpio_set_dir(GPIN, 0);
+
+	for ( ; i < 20; i++) {
+		if (gpio_get(GPIN)) {
+			break;
+		}
+	}
+	
+	if (i == 20) {
+		z++;
+		zz = 0;
+		if (z > 60) {
+			if (!bootsel_button) {
+				bootsel_button =  1;
+				zz = 0;
+			}
+		}
+	} else {
+		zz += (i == 0);
+		if (zz > 90) {
+			if (bootsel_button) {
+				bootsel_button = 0;
+				z = 0;
+			}
+		}
+		z = 0;
+	} 
 }
 
 
@@ -167,32 +219,60 @@ void  processLine(char *p, int l) {
 		printf("\r\nECHO: %s\r\n", config.echo ? "ON" : "OFF");
 		UpdateConfig(&sys);
 	} else if (strcasecmp(p, "ID") == 0) {
-		printf("\r\nID: %s v:%s f:%p s:%d c:%llu\r\n", sys.id, sys.version, flash_start, sys.size, config.runcount);
+		printf("\r\nID: %s v:%s f:%p s:%d fs:%u c:%llu\r\n", sys.id, sys.version, flash_start, sys.size, sys.flashsize, config.runcount);
 	}
 }
+char	*skipspace(char *s) {
+	for ( ; *s && (*s == ' ' || *s == 9 || *s == 10); s++);
+	return s;
+}
 
+char	*skipnonspace(char *s) {
+	for ( ; *s && *s != ' ' && *s != 9 && *s != 10; s++)
+		*s = toupper(*s);
+	return s;
+}
+char	**split_str(char *s, int *idx) {
+	static char		*r[32];
+	
+	s = skipspace(s);
+	for (*idx = 0 ; *s; s = skipspace(s)) {
+		r[*idx] = s;
+		if (*idx < 31)
+			(*idx)++;
+		if (*(s = skipnonspace(s)))
+			*(s++) = 0;
+	}
+	r[*idx] = NULL;
+	return r;
+}
 void	input_loop(void) {
 	int		c;
-	if ((c = getchar_timeout_us(0)) != PICO_ERROR_TIMEOUT) {		
+	while ((c = getchar_timeout_us(0)) != PICO_ERROR_TIMEOUT) {		
 		if (!sys.usb_ack) {
-			printf("\r\n\033[2J%s > ", sys.id);
+		//	printf("\r\n\033[2J%s > ", sys.id);
 			if (sys.cb)
 				(*sys.cb)(CMD_USB_CONNECTED, NULL, NULL, NULL, NULL);
+			sys.usb_ack = 1;
 			//Esc[2J printf("\r\n\x1B[2J");
 			
 		}
 		sys.usb_connected = sys.unow;
+		if (c == 10) {
+			continue;
+		}
+		
 		if (config.echo)
 			putchar(c);
-		if (c == 10)
-			return;
 		if (c == 13) {
 			line[linec] = 0;
 			if (linec) {
-				//processLine(line, linec);
-				if (sys.cb)
-					(sys.cb)(CMD_UART_DATA, line, (char *) linec, NULL, NULL);
-				
+				if (sys.cb) {
+					char	**p;
+					int	cnt;
+					p = split_str(line, &cnt);
+					(sys.cb)(CMD_UART_DATA, line, (char *) linec, (char *) p, (char *) cnt);
+				}
 			} 
 			printf("\r\n%s > ", sys.id);
 			linec = 0;
@@ -200,14 +280,16 @@ void	input_loop(void) {
 			line[linec] = c & 0xFF;
 			linec += linec < 511 ? 1 : 0;
 		}
-	} else if (sys.usb_connected) {
-		if ((sys.unow - sys.usb_connected) > 10000000) {
-			sys.usb_connected = 0;
-			sys.usb_ack = 0;
-			if (sys.cb)
-				(*sys.cb)(CMD_USB_DISCONNECTED, NULL, NULL, NULL, NULL);
+	} 
+	if (c == PICO_ERROR_TIMEOUT)
+		if (sys.usb_connected) {
+			if ((sys.unow - sys.usb_connected) > 10000000) {
+				sys.usb_connected = 0;
+				sys.usb_ack = 0;
+				if (sys.cb)
+					(*sys.cb)(CMD_USB_DISCONNECTED, NULL, NULL, NULL, NULL);
+			}
 		}
-	}
 }
 
 #endif

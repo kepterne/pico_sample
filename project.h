@@ -11,7 +11,7 @@
 #include	"hardware/structs/sio.h"
 
 
-//#define	DEBUG	1
+#define	DEBUG	1
 
 #define	VERSION_MAJOR	1
 #define	VERSION_MINOR	0
@@ -25,34 +25,20 @@
 
 typedef	struct {
 	char		magic[128];
-	int		ports[3];
-	int		vmap[16];
-	uint64_t	runcount;
-	int		echo;
+	int			echo;
+	int			muxports[5];
+	int			ports[4];
+	
+	uint64_t		runcount;
 } StoredConfig;
 
 #ifdef	main_c
 		StoredConfig	config = {
-			"MagickcigaM",
-			{16, 17, 18},
-			{
-				1100, // 1111
-				1000, // 1110
-				950,
-				890,
-				830,
-				760,
-				690,
-				620,
-				550,
-				490,
-				420,
-				340,
-				260,
-				185,
-				95,
-				0
-			}
+			"pico_car_6",			// DEGERLERDE DEGISIKLIK YAPINCA BUT STRING'I DE DEGISTIRIN
+			1,						// echo on
+			{10, 11, 12, 13, 14}, 	// RELAY PIN'LERI + KONTROL PINI
+			{21, 20, 19, 18},		// ANALOG MUX PINLERI, ADC2'DEN OKUNUYOR
+			
 		};
 #else
 extern	StoredConfig	config;

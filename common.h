@@ -15,7 +15,7 @@ typedef	struct {
 	char		version[64];
 	uint64_t	unow, ustart;
 	uint64_t	seconds;
-	uint32_t	size;
+	uint32_t	size, flashsize;
 	int		bootsel;
 	uint64_t	bootsel_start;
 	uint64_t	usb_connected;
@@ -31,6 +31,7 @@ void	GetBoardID(char *p);
 void	resetPico(void);
 void	SaveConfig(SystemConfig *s);
 void	UpdateConfig(SystemConfig *s);
+int	TouchLoop(int GPIN);
 
 #ifdef	common_c
 		char			*flash_start = (char *) XIP_BASE;

@@ -21,6 +21,15 @@
     "cmake.configureOnOpen": true,
     "files.associations": {
         "project.h": "c",
-        "common.h": "c"
-    }
+        "common.h": "c",
+        "intctrl.h": "c",
+        "dma.h": "c",
+        "adc.h": "c",
+        "gpio.h": "c",
+        "ioqspi.h": "c",
+        "math.h": "c"
+    },
+    "cmake.environment": {
+        "PICO_SDK_PATH":"~/pico/pico-sdk"
+    },
 }

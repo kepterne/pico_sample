@@ -2,15 +2,20 @@ cmake_minimum_required(VERSION 3.13)
 
 include(pico_sdk_import.cmake)
 
-project(seatsensor)
+project(pico_analog)
 
 pico_sdk_init()
 
-add_executable(seatsensor seatsensor.c common.c)
-target_link_libraries(seatsensor hardware_adc)
-pico_enable_stdio_usb(seatsensor 1)
-pico_enable_stdio_uart(seatsensor 1)
+add_executable(pico_analog pico_analog.c common.c analog_reader.c lcd_display.c)
 
-pico_add_extra_outputs(seatsensor)
+target_link_libraries(pico_analog hardware_adc)
+target_link_libraries(pico_analog pico_stdlib)
+target_link_libraries(pico_analog pico_multicore)
+target_link_libraries(pico_analog hardware_dma)
+target_link_libraries(pico_analog hardware_i2c)
 
-target_link_libraries(seatsensor pico_stdlib)
+pico_enable_stdio_usb(pico_analog 1)
+pico_enable_stdio_uart(pico_analog 1)
+
+pico_add_extra_outputs(pico_analog)
+
