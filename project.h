@@ -28,20 +28,45 @@ typedef	struct {
 	int			echo;
 	int			muxports[5];
 	int			ports[4];
+	char		hostadr[32];
+	int			hostport;
+	char		aps[4][2][32];
 	
 	uint64_t		runcount;
 } StoredConfig;
 
 #ifdef	main_c
+		char		SharedSecret[64] = "canEliffilEnac";
 		StoredConfig	config = {
-			"pico_car_6",			// DEGERLERDE DEGISIKLIK YAPINCA BUT STRING'I DE DEGISTIRIN
+			"pico_car_2",			// DEGERLERDE DEGISIKLIK YAPINCA BUT STRING'I DE DEGISTIRIN
 			1,						// echo on
 			{10, 11, 12, 13, 14}, 	// RELAY PIN'LERI + KONTROL PINI
 			{21, 20, 19, 18},		// ANALOG MUX PINLERI, ADC2'DEN OKUNUYOR
+			"173.255.229.145",
+			8899,
+			{
+				{
+					"EIP\xe2\x98\x8e\xef\xb8\x8f", "e0gvbm6pr30k3"
+				},
+				{	
+					"alphagolf-2.4",
+					"1qazoFa1s4B"
+				},
+				{
+					"parkyS",
+					"23646336"
+				},
+				{
+					"",
+					""
+				}
+
+			}
 			
 		};
 #else
 extern	StoredConfig	config;
+extern	char			SharedSecret[64];
 #endif
 
 #endif

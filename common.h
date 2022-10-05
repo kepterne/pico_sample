@@ -1,19 +1,27 @@
 #ifndef	common_h
 #define	common_h
 
+#define	WIFI
+
 #define	ABSDIFF(x, y)	((x) > (y) ? (x) - (y) : (y) - (x))
 
 #define	CMD_PROGRAM_INIT		0x0001
 #define	CMD_CONFIG_STORED		0x0002
 #define	CMD_BUTTON_PRESS		0x0003
-#define	CMD_UART_DATA		0x0004
+#define	CMD_UART_DATA			0x0004
 #define	CMD_USB_DISCONNECTED	0x0005
 #define	CMD_USB_CONNECTED		0x0006
+#define	CMD_WIFI_CONNECTING		0x0007
+#define	CMD_WIFI_CONNECTED		0x0008
+#define	CMD_WIFI_DISCONNECTED	0x0009
+
+#define	CMD_TCP_DATA			0x000A
+#define	CMD_PARAM				0x000B
 
 typedef	struct {
 	char		id[64];
 	char		version[64];
-	uint64_t	unow, ustart;
+	uint64_t	unow, ustart, tbase, tstart, toff;
 	uint64_t	seconds;
 	uint32_t	size, flashsize;
 	int		bootsel;
@@ -29,6 +37,7 @@ void	initSys(SystemConfig *s, void (*f)(uint32_t, char *, char *, char *, char *
 void	loopSys(SystemConfig *s);
 void	GetBoardID(char *p);
 void	resetPico(void);
+time_t	getTime(void);
 void	SaveConfig(SystemConfig *s);
 void	UpdateConfig(SystemConfig *s);
 int	TouchLoop(int GPIN);

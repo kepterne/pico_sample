@@ -6,6 +6,7 @@
 
 #include	"project.h"
 #include	"common.h"
+#include	"wifi.h"
 
 /*
 bool __no_inline_not_in_flash_func(get_bootsel_button)() {
@@ -38,6 +39,14 @@ bool __no_inline_not_in_flash_func(get_bootsel_button)() {
     return button_state;
 }
 */
+time_t	getTime(void) {
+	time_t	t;
+	if (!sys.tstart)
+		return 0;
+	return (sys.unow - sys.ustart - sys.tstart * 1000000 + sys.tbase * 1000000 + sys.toff) / 1000000;
+	
+}
+
 void	GetBoardID(char *p) {
 	int		l = 0;
 
@@ -100,8 +109,10 @@ void	initSys(SystemConfig *s, void (*f)(uint32_t, char *, char *, char *, char *
 	s->bootsel_start = 0;
 	s->usb_connected = 0;
 	GetBoardID(s->id);
+#ifndef	WIFI
 	gpio_init(PICO_DEFAULT_LED_PIN);
    	gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
+#endif
 	strcpy(s->version, completeVersion);
 	
 	pp = &__flash_binary_end;
@@ -148,14 +159,18 @@ void	LoopButton(SystemConfig *s) {
 			k = ((d - RESET_COUNTER) / RESET_BLINKER) & 1;
 		} else
 			k = 0;
-		gpio_put(PICO_DEFAULT_LED_PIN, (k ^ 1) ^ PICO_DEFAULT_LED_PIN_INVERTED);	
+		#ifndef	WIFI
+			gpio_put(PICO_DEFAULT_LED_PIN, (k ^ 1) ^ PICO_DEFAULT_LED_PIN_INVERTED);	
+		#endif
 	}
 	if (r != s->bootsel) {	
 		s->bootsel = r;
 		if (r) {
 			s->bootsel_start = s->unow;
 		} else {
+			#ifndef	WIFI
 			gpio_put(PICO_DEFAULT_LED_PIN, 0 ^ PICO_DEFAULT_LED_PIN_INVERTED);
+			#endif
 			if (d > BOOTSEL_COUNTER) {
 				
 				reset_usb_boot(0, 0);
@@ -311,5 +326,9 @@ void	loopSys(SystemConfig *s) {
 	LoopButton(s);
 #ifdef	DEBUG
 	input_loop();
+#endif
+
+#ifdef	WIFI
+	LoopWifi();
 #endif
 }

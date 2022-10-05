@@ -14,6 +14,7 @@ float	NTCTemp(int Adc, int RSeries, int RefT, int RefR, int B) {
 	float T =  1 / ((1.0 / To) + ((log(R / RefR)) / B));
 	return T - 273.15; 
 }
+extern	int	anok;
 
 void	core1_analog(void) {
 	dma_channel_config 	cfg0, cfg1;
@@ -23,13 +24,16 @@ void	core1_analog(void) {
 	
 	
 	adc_init();
+	gpio_init(25);
+	gpio_set_dir(25, 1);
+	gpio_put(25, 1);
 	adc_gpio_init(26 + 0);
 	adc_gpio_init(26 + 1);
 	adc_gpio_init(26 + 2);
-	//adc_gpio_init(26 + 3);
+	adc_gpio_init(26 + 3);
     adc_set_temp_sensor_enabled(true);
 	adc_select_input(0);
-	adc_set_round_robin(1 | 2 | 4 | 16);
+	adc_set_round_robin(1 | 2 | 4 | 8 | 16);
 	adc_fifo_setup(
 		true,  // Write each completed conversion to the sample FIFO
 		true,  // Enable DMA data request (DREQ)
@@ -78,23 +82,31 @@ void	core1_analog(void) {
 	dma_channel_start(dma_chan0);
 	adc_run(true);
 	
-	for (samples = 0, cur_buf = 0; ; cur_buf ^= 1) {
+	for (samples = 0, cur_buf = 0; !anok; cur_buf ^= 1) {
 		dma_channel_wait_for_finish_blocking(cur_buf ? dma_chan1 : dma_chan0);
 		dma_hw->ch[cur_buf ? dma_chan1 : dma_chan0].al3_write_addr = (io_rw_32) capture_buf[cur_buf];
 
-		uint32_t	total[4] = {0, 0, 0, 0};
+		uint32_t	total[5] = {0, 0, 0, 0, 0};
 		for (int i = 0; i < NSAMP; i++, samples++) {
 			//switch (i % 4) {
 			//case 0:
 
-			total[i & 3] += capture_buf[cur_buf][i];
+			total[i % 5] += capture_buf[cur_buf][i];
 			//	break;
 			//}
 		}
-		for (int i = 0; i < 4; i++)
-			reading16[i] = total[i] / (NSAMP / 4);
+		for (int i = 0; i < 5; i++)
+			reading16[i] = total[i] / (NSAMP / 5);
 		
 		
 		//printf("\r\nDMA %d finished [%d]\r\n", cur_buf, total);
 	}
+	adc_fifo_drain();
+	adc_run(false);
+	dma_channel_abort(dma_chan0);
+	dma_channel_abort(dma_chan1);
+	dma_channel_unclaim(dma_chan0);
+	dma_channel_unclaim(dma_chan1);
+	
+	anok = 2;
 }
