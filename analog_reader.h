@@ -2,7 +2,7 @@
 #define	analog_reader_h
 
 #define	CLOCK_DIV 		1
-#define	NSAMP			(1025)
+#define	NSAMP			(512 * 5)
 #define	CAPTURE_CHANNEL	2
 
 #ifdef	analog_reader_c
@@ -21,5 +21,6 @@ extern	uint64_t		samples;
 
 void	core1_analog(void);
 float	NTCTemp(int Adc, int RSeries, int RefT, int RefR, int B);
+void	polling_analog(void);
 
 #endif

@@ -109,6 +109,7 @@ void	initSys(SystemConfig *s, void (*f)(uint32_t, char *, char *, char *, char *
 	s->bootsel_start = 0;
 	s->usb_connected = 0;
 	GetBoardID(s->id);
+	strcpy(s->flashid, s->id);
 #ifndef	WIFI
 	gpio_init(PICO_DEFAULT_LED_PIN);
    	gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
@@ -323,7 +324,7 @@ void	loopSys(SystemConfig *s) {
 		//printf("\r\nTemp = %f C\r\n", temp);  
 	}
 */
-	LoopButton(s);
+	//LoopButton(s);
 #ifdef	DEBUG
 	input_loop();
 #endif

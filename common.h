@@ -20,6 +20,7 @@
 
 typedef	struct {
 	char		id[64];
+	char		flashid[64];
 	char		version[64];
 	uint64_t	unow, ustart, tbase, tstart, toff;
 	uint64_t	seconds;

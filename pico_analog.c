@@ -120,8 +120,8 @@ void	System(uint32_t cmd, char *p1, char *p2, char *p3, char *p4) {
 			md5_digest_string(md5, challenge);
 		//	up(" !------------- CHALLENGE -------------! ");
 		//	upr(challenge);
-			sprintf(tc->senddata, "HELO: %s %u.%u ~type(%s) uptime(%llu) id(%s) ver(%s) wifi(%s)~\n", challenge, 1, 1,
-				"WEMOS_MINI",
+			sprintf(tc->senddata, "HELO: %s %s.%s ~type(%s) uptime(%llu) id(%s) ver(%s) wifi(%s)~\n", challenge, sys.id, sys.flashid,
+				"PICO_W",
 				sys.seconds, 
 				sys.id,
 				sys.version,
@@ -233,10 +233,23 @@ void	System(uint32_t cmd, char *p1, char *p2, char *p3, char *p4) {
 
 int	bootsel_button = 0;
 
+#include	"hardware/adc.h"
 int	main(void) {
 	uint64_t	last = 0;
 	int		seconds = 0;
 	initSys(&sys, System);
+		adc_init();
+		adc_gpio_init(26 + 3);
+		gpio_init(25);
+		gpio_set_dir(25, 1);
+		gpio_put(25, 1);
+
+		adc_gpio_init(26 + 0);
+		adc_gpio_init(26 + 1);
+		adc_gpio_init(26 + 2);
+		adc_gpio_init(26 + 3);
+		gpio_put(25, 1);
+		adc_set_temp_sensor_enabled(true);
 	lcd_init();	
 	lcdok = 0;
 /*	multicore_launch_core1(core1_analog);
@@ -245,6 +258,7 @@ int	main(void) {
 
 	for ( ; ; ) {
 		loopSys(&sys);
+		polling_analog();
 		{
 			
 			if (!anok) {
