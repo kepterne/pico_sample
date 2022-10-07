@@ -8,6 +8,15 @@
 #include	"common.h"
 #include	"wifi.h"
 
+uint64_t	get64(char *p) {
+	uint64_t	r = 0;
+	for ( ; *p; p++) {
+		if (*p >= '0' && *p <= '9')
+			r = (r * 10) + *p - '0';
+	}
+	return r;
+}
+
 /*
 bool __no_inline_not_in_flash_func(get_bootsel_button)() {
     const uint CS_PIN_INDEX = 1;
@@ -60,9 +69,11 @@ void	GetBoardID(char *p) {
 
 extern char __flash_binary_end;
 
-void	SaveConfig(SystemConfig *s) {
+void	SaveConfig(StoredConfig *s) {
 	uint32_t 	ints;
-	int		sz = sizeof(config);
+	int			sz = sizeof(config);
+	if (sys.cb)
+		(*sys.cb)(CMD_CONFIG_STORE, (char *) &config, NULL, NULL, NULL);
 	ints = save_and_disable_interrupts();
 	if (sz % FLASH_SECTOR_SIZE)
 		sz = sz + FLASH_SECTOR_SIZE - (sz % FLASH_SECTOR_SIZE);
@@ -72,16 +83,15 @@ void	SaveConfig(SystemConfig *s) {
 		sz = sz + FLASH_PAGE_SIZE - (sz % FLASH_PAGE_SIZE);
 	flash_range_program(flash_addr, (char *) &config, sz);
 	restore_interrupts (ints);
-	if (s->cb)
-		(*s->cb)(CMD_CONFIG_STORED, (char *) &config, NULL, NULL, NULL);
-	
+	if (sys.cb)
+		(*sys.cb)(CMD_CONFIG_STORED, (char *) &config, NULL, NULL, NULL);
 }
 
-void	UpdateConfig(SystemConfig *s) {
+void	UpdateConfig(StoredConfig *s) {
 	StoredConfig	*sc;
 	sc = (StoredConfig *) flash_start;
 	if (memcmp(sc, &config, sizeof(config))) {
-		SaveConfig(s);
+		SaveConfig(&config);
 	}
 }
 
@@ -130,11 +140,11 @@ void	initSys(SystemConfig *s, void (*f)(uint32_t, char *, char *, char *, char *
 	restore_interrupts (ints);
 	sc = (StoredConfig *) flash_start;
 	if (strcmp(sc->magic, config.magic))
-		SaveConfig(s);
+		SaveConfig(&config);
 	else
 		memcpy(&config, flash_start, sizeof(config));
 	config.runcount++;
-	UpdateConfig(s);
+	UpdateConfig(&config);
 	if (s->cb)
 		(*s->cb)(CMD_PROGRAM_INIT, (char *) s, (char *) &config, NULL, NULL);
 		
@@ -233,7 +243,7 @@ void  processLine(char *p, int l) {
 //	printf("L %d:%s\r\n", l, p);
 	if (sscanf(p, "ECHO %d", &config.echo) == 1) {
 		printf("\r\nECHO: %s\r\n", config.echo ? "ON" : "OFF");
-		UpdateConfig(&sys);
+		UpdateConfig(&config);
 	} else if (strcasecmp(p, "ID") == 0) {
 		printf("\r\nID: %s v:%s f:%p s:%d fs:%u c:%llu\r\n", sys.id, sys.version, flash_start, sys.size, sys.flashsize, config.runcount);
 	}

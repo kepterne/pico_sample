@@ -15,16 +15,7 @@
 
 #include "pico/cyw43_arch.h"
 
-int	anok = 1, lcdok = 1;
-
-uint64_t	get64(char *p) {
-	uint64_t	r = 0;
-	for ( ; *p; p++) {
-		if (*p >= '0' && *p <= '9')
-			r = (r * 10) + *p - '0';
-	}
-	return r;
-}
+int	anok = 2;
 
 void	ProcessFields(TCP_CLIENT_T *tc, char *p) {
 	if (*p != '~')
@@ -47,7 +38,7 @@ void	ProcessFields(TCP_CLIENT_T *tc, char *p) {
 			return;
 		*(p++) = 0;
 		if (sys.cb)
-			(*sys.cb)(CMD_PARAM, tc, name, value, NULL);
+			(*sys.cb)(CMD_PARAM, (char *) tc, name, value, NULL);
 	}
 }
 
@@ -78,7 +69,7 @@ void	System(uint32_t cmd, char *p1, char *p2, char *p3, char *p4) {
 			sys.toff = ts / 1000;
 			struct tm	*t;
 			ts = getTime();
-			t = localtime(&ts);
+			t = localtime((time_t *) &ts);
 			printf("@ T: %04d %02d %02d - %02d %02d %02d\r\n",
 				t->tm_year + 1900,
 				t->tm_mon + 1,
@@ -120,7 +111,8 @@ void	System(uint32_t cmd, char *p1, char *p2, char *p3, char *p4) {
 			md5_digest_string(md5, challenge);
 		//	up(" !------------- CHALLENGE -------------! ");
 		//	upr(challenge);
-			sprintf(tc->senddata, "HELO: %s %s.%s ~type(%s) uptime(%llu) id(%s) ver(%s) wifi(%s)~\n", challenge, sys.id, sys.flashid,
+			sprintf(tc->senddata, "HELO: %s %s.%s ~name(%s) type(%s) uptime(%llu) id(%s) ver(%s) wifi(%s)~\n", challenge, sys.id, sys.flashid,
+				config.name,
 				"PICO_W",
 				sys.seconds, 
 				sys.id,
@@ -153,35 +145,15 @@ void	System(uint32_t cmd, char *p1, char *p2, char *p3, char *p4) {
 		int		segs = (int) p4;
 		char		**p = (char **) p3;
 		if (strcmp(p[0], "DMA") == 0) {
-			if (anok) {
-				multicore_launch_core1(core1_analog);
-				anok = 0;
-			//	core1_analog();
-			} else {
-				anok = 1;
-				while (anok != 2)
-					sleep_ms(1);
-				anok = 1;
-				multicore_reset_core1();
-				if (!lcdok) {
-					lcd_clear();
-				}
-				
-			}
-			//core1_analog();
-		}
-		if (strcmp(p[0], "LCD") == 0) {
-			if (lcdok) {
-				lcd_init();
-				lcdok = 0;
-			//	core1_analog();
-			} else {
-				lcd_clear();
-				lcdok = 1;
-			}
-			//core1_analog();
-		}
-		if (strcmp(p[0], "ECHO") == 0) {
+			int	i = analog_toggle();
+			printf("ANALOG READER IS %s\r\n", i ? "ON" : "OFF");
+			config.analogon = i;
+			SaveConfig(&config);
+		} else if (strcmp(p[0], "LCD") == 0) {
+			config.lcdon = lcd_toggle();
+			SaveConfig(&config);
+			printf("LCD IS %s\r\n", config.lcdon  ? "ON" : "OFF");		
+		} else if (strcmp(p[0], "ECHO") == 0) {
 			if (segs > 1) {
 				int	j = -1;
 				if (strcmp(p[1], "ON") == 0) 
@@ -191,7 +163,7 @@ void	System(uint32_t cmd, char *p1, char *p2, char *p3, char *p4) {
 				if (j >= 0) {
 					if (config.echo != j) {
 						config.echo = j;
-						UpdateConfig(&sys);
+						SaveConfig(&config);
 					};
 				}
 			}
@@ -213,7 +185,13 @@ void	System(uint32_t cmd, char *p1, char *p2, char *p3, char *p4) {
 			printf("\r\nBUTTON PRESS %u\r\n", d);
 		}
 	break;
+
+	case CMD_CONFIG_STORE: 
+			analog_pause();
+			printf("CONFIG WILL BE STORED\r\n");
+	break;
 	case CMD_CONFIG_STORED: 
+			analog_resume();
 			printf("CONFIG STORED\r\n");
 	break;
 	case CMD_PROGRAM_INIT: {
@@ -234,34 +212,21 @@ void	System(uint32_t cmd, char *p1, char *p2, char *p3, char *p4) {
 int	bootsel_button = 0;
 
 #include	"hardware/adc.h"
+
 int	main(void) {
 	uint64_t	last = 0;
 	int		seconds = 0;
 	initSys(&sys, System);
-		adc_init();
-		adc_gpio_init(26 + 3);
-		gpio_init(25);
-		gpio_set_dir(25, 1);
-		gpio_put(25, 1);
-
-		adc_gpio_init(26 + 0);
-		adc_gpio_init(26 + 1);
-		adc_gpio_init(26 + 2);
-		adc_gpio_init(26 + 3);
-		gpio_put(25, 1);
-		adc_set_temp_sensor_enabled(true);
-	lcd_init();	
-	lcdok = 0;
-/*	multicore_launch_core1(core1_analog);
-	anok = 0;
-*/
-
+	if (config.lcdon) {
+		lcd_init();
+	}
 	for ( ; ; ) {
 		loopSys(&sys);
-		polling_analog();
 		{
-			
-			if (!anok) {
+			if (config.analogon) {
+				analog_on();
+			}
+			if (__analog_inuse) {
 				int	a = reading16[ADC_2];
 				float v = reading16[ADC_1];
 				float	vcc = 3 * reading16[ADC_VCC] * 3.3 / 4095.0;
@@ -295,7 +260,7 @@ int	main(void) {
 					last = sys.unow;
 					seconds = sys.seconds;
 					//printf("\r\nT: %5.1f\r\n", aT);
-					if (!lcdok) {
+					if (config.lcdon) {
 						char	st[32];
 						sprintf(st, "%4.1f%5.1f %3.1fA %4.1fV", aT, tempC, v, vcc);
 						lcd_set_cursor(0, 0);

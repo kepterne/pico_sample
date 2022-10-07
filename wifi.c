@@ -271,7 +271,7 @@ err_t tcp_client_recv(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err
                     state->buffer[state->buffer_len] = 0;
                     if (state->buffer_len) {
                         if (sys.cb) {
-                            (*sys.cb)(CMD_TCP_DATA, state, state->buffer, (char *) state->buffer_len, NULL);
+                            (*sys.cb)(CMD_TCP_DATA, (char *) state, state->buffer, (char *) state->buffer_len, NULL);
                             if (state->senddata[0]) {
                                 printf("Writing %d bytes to server\n", state->buffer_len);
                                 err_t err = tcp_write(tpcb, state->senddata, strlen(state->senddata), TCP_WRITE_FLAG_COPY);

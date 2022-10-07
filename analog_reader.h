@@ -8,9 +8,12 @@
 #ifdef	analog_reader_c
 		int				reading16[5] = {0, 0, 0, 0, 0};
 		uint64_t		samples = 0;
+		int				__analog_inuse = 0;
 #else
 extern	int				reading16[5];
 extern	uint64_t		samples;
+
+extern	int				__analog_inuse;
 #endif
 
 #define	ADC_0		0
@@ -21,6 +24,15 @@ extern	uint64_t		samples;
 
 void	core1_analog(void);
 float	NTCTemp(int Adc, int RSeries, int RefT, int RefR, int B);
+/*
 void	polling_analog(void);
+*/
+
+int		analog_toggle(void);
+void	analog_on();
+void	analog_off();
+
+void	analog_resume(void);
+void	analog_pause(void);
 
 #endif

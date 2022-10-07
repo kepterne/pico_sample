@@ -5,18 +5,19 @@
 
 #define	ABSDIFF(x, y)	((x) > (y) ? (x) - (y) : (y) - (x))
 
-#define	CMD_PROGRAM_INIT		0x0001
-#define	CMD_CONFIG_STORED		0x0002
-#define	CMD_BUTTON_PRESS		0x0003
-#define	CMD_UART_DATA			0x0004
-#define	CMD_USB_DISCONNECTED	0x0005
-#define	CMD_USB_CONNECTED		0x0006
-#define	CMD_WIFI_CONNECTING		0x0007
-#define	CMD_WIFI_CONNECTED		0x0008
-#define	CMD_WIFI_DISCONNECTED	0x0009
+#define	CMD_PROGRAM_INIT		0x0010
+#define	CMD_CONFIG_STORE		0x0020
+#define	CMD_CONFIG_STORED		0x0021
+#define	CMD_BUTTON_PRESS		0x0030
+#define	CMD_UART_DATA			0x0040
+#define	CMD_USB_DISCONNECTED	0x0050
+#define	CMD_USB_CONNECTED		0x0060
+#define	CMD_WIFI_CONNECTING		0x0070
+#define	CMD_WIFI_CONNECTED		0x0080
+#define	CMD_WIFI_DISCONNECTED	0x00A0
 
-#define	CMD_TCP_DATA			0x000A
-#define	CMD_PARAM				0x000B
+#define	CMD_TCP_DATA			0x00B0
+#define	CMD_PARAM				0x00C0
 
 typedef	struct {
 	char		id[64];
@@ -33,14 +34,15 @@ typedef	struct {
 	void		(*cb)(uint32_t, char *, char *, char *, char *);
 } SystemConfig;
 
+uint64_t	get64(char *p);
 bool __no_inline_not_in_flash_func(get_bootsel_button)();
 void	initSys(SystemConfig *s, void (*f)(uint32_t, char *, char *, char *, char *));
 void	loopSys(SystemConfig *s);
 void	GetBoardID(char *p);
 void	resetPico(void);
 time_t	getTime(void);
-void	SaveConfig(SystemConfig *s);
-void	UpdateConfig(SystemConfig *s);
+void	SaveConfig(StoredConfig *s);
+void	UpdateConfig(StoredConfig *s);
 int	TouchLoop(int GPIN);
 
 #ifdef	common_c

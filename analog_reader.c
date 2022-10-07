@@ -4,6 +4,7 @@
 
 #include	"hardware/adc.h"
 #include	"hardware/dma.h"
+#include	"pico/multicore.h"
 
 #include	"analog_reader.h"
 
@@ -17,10 +18,10 @@ float	NTCTemp(int Adc, int RSeries, int RefT, int RefR, int B) {
 extern	int	anok;
 
 void	core1_analog(void) {
-	dma_channel_config 	cfg0, cfg1;
-	int				cur_buf = 0;
-	uint16_t			capture_buf[2][NSAMP];
-	int				channel = 0, selected = 0;
+	dma_channel_config 		cfg0, cfg1;
+	uint16_t				capture_buf[2][NSAMP];
+	int						cur_buf = 0;
+	int						channel = 0, selected = 0;
 	
 	
 	adc_init();
@@ -30,7 +31,7 @@ void	core1_analog(void) {
 	adc_gpio_init(26 + 0);
 	adc_gpio_init(26 + 1);
 	adc_gpio_init(26 + 2);
-	adc_gpio_init(26 + 3);
+//	adc_gpio_init(26 + 3);
     adc_set_temp_sensor_enabled(true);
 	adc_select_input(0);
 	adc_set_round_robin(1 | 2 | 4 | 8 | 16);
@@ -48,9 +49,9 @@ void	core1_analog(void) {
 	cfg0 = dma_channel_get_default_config(dma_chan0);
 	cfg1 = dma_channel_get_default_config(dma_chan1);
 
-	// Reading from constant address, writing to incrementing byte addresses
 	channel_config_set_transfer_data_size(&cfg0, DMA_SIZE_16);
 	channel_config_set_transfer_data_size(&cfg1, DMA_SIZE_16);
+	// Reading from constant address, writing to incrementing byte addresses
 	
 	channel_config_set_read_increment(&cfg0, false);
 	channel_config_set_read_increment(&cfg1, false);
@@ -60,12 +61,18 @@ void	core1_analog(void) {
 	// Pace transfers based on availability of ADC samples
 	channel_config_set_dreq(&cfg0, DREQ_ADC);
 	channel_config_set_dreq(&cfg1, DREQ_ADC);
-
+	// Chain blocks to each other
 	channel_config_set_chain_to(&cfg0, dma_chan1);
 	channel_config_set_chain_to(&cfg1, dma_chan0);
 	adc_fifo_drain();
 	adc_run(false);
 
+	dma_channel_configure(dma_chan0, &cfg0,
+		capture_buf[0],   // dst
+		&adc_hw->fifo, 	// src
+		NSAMP,         	// transfer count
+		false           	// start immediately
+	);
 	dma_channel_configure(dma_chan1, &cfg1,
 		capture_buf[1],   // dst
 		&adc_hw->fifo, // src
@@ -73,12 +80,6 @@ void	core1_analog(void) {
 		false           // start immediately
 	);
 	
-	dma_channel_configure(dma_chan0, &cfg0,
-		capture_buf[0],   // dst
-		&adc_hw->fifo, 	// src
-		NSAMP,         	// transfer count
-		false           	// start immediately
-	);
 	dma_channel_start(dma_chan0);
 	adc_run(true);
 	
@@ -92,8 +93,6 @@ void	core1_analog(void) {
 		}
 		for (int i = 0; i < 5; i++)
 			reading16[i] = total[i] / (NSAMP / 5);
-		
-		
 		//printf("\r\nDMA %d finished [%d]\r\n", cur_buf, total);
 	}
 	adc_fifo_drain();
@@ -105,7 +104,7 @@ void	core1_analog(void) {
 	
 	anok = 2;
 }
-
+/*
 
 int				poll_analog = 0;
 uint			polling_channels[2];
@@ -118,6 +117,18 @@ void	polling_analog(void) {
 	
 	if (!poll_analog) {
 		poll_analog = 1;	
+		adc_init();
+		adc_gpio_init(26 + 3);
+		gpio_init(25);
+		gpio_set_dir(25, 1);
+		gpio_put(25, 1);
+
+		adc_gpio_init(26 + 0);
+		adc_gpio_init(26 + 1);
+		adc_gpio_init(26 + 2);
+		adc_gpio_init(26 + 3);
+		gpio_put(25, 1);
+		adc_set_temp_sensor_enabled(true);
 		
 		adc_select_input(0);
 		adc_set_round_robin( 1 | 2 | 4 | 8 | 16);
@@ -195,14 +206,47 @@ void	polling_analog(void) {
 	cur_buf ^= 1;
 	anok = 0;
 	//printf("\r\nDMA %d finished [%d]\r\n", cur_buf, total);
-/*
-	adc_fifo_drain();
-	adc_run(false);
-	dma_channel_abort(dma_chan0);
-	dma_channel_abort(dma_chan1);
-	dma_channel_unclaim(dma_chan0);
-	dma_channel_unclaim(dma_chan1);
-	
-	anok = 2;
+
+}
 */
+int	analog_paused = 0;
+void	analog_pause(void) {
+	if (!__analog_inuse)
+		return;
+	analog_off();
+	analog_paused = 1;
+}
+
+void	analog_resume(void) {
+	if (!analog_paused)
+		return;
+	analog_on();
+	analog_paused = 0;
+}
+
+void	analog_on(void) {
+	if (__analog_inuse)
+		return;
+	anok = 0;
+	multicore_launch_core1(core1_analog);
+	__analog_inuse = 1;
+}
+
+void	analog_off(void) {
+	if (!__analog_inuse)
+		return;
+	anok = 1;
+	while (anok != 2)
+		sleep_ms(1);
+	anok = 1;
+	multicore_reset_core1();
+	__analog_inuse = 0;
+}
+
+int	analog_toggle(void) {
+	if (__analog_inuse)
+		analog_off();
+	else
+		analog_on();
+	return __analog_inuse;
 }

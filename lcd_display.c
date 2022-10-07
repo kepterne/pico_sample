@@ -79,6 +79,8 @@ void lcd_send_byte(uint8_t val, int mode) {
 }
 
 void lcd_clear(void) {
+    if (!__lcd_inuse)
+        return;
     lcd_send_byte(LCD_CLEARDISPLAY, LCD_COMMAND);
 }
 
@@ -86,14 +88,20 @@ void lcd_clear(void) {
 void lcd_set_cursor(int line, int position) {
     uint8_t    row_offsets[4] = { 0x00, 0x40, 0x14, 0x54 };
     int val = 0x80 + row_offsets[line] + position;
+    if (!__lcd_inuse)
+        return;
     lcd_send_byte(val, LCD_COMMAND);
 }
 
 static void inline lcd_char(char val) {
+    if (!__lcd_inuse)
+        return;
     lcd_send_byte(val, LCD_CHARACTER);
 }
 
 void lcd_string(const char *s) {
+    if (!__lcd_inuse)
+        return;
     while (*s) {
         lcd_char(*s++);
     }
@@ -109,18 +117,19 @@ void _lcd_init() {
     lcd_send_byte(LCD_FUNCTIONSET | LCD_2LINE, LCD_COMMAND);
     lcd_send_byte(LCD_DISPLAYCONTROL | LCD_DISPLAYON, LCD_COMMAND);
     lcd_clear();
+    __lcd_inuse = 1;
 }
 
 void	lcd_init(void) {
 	i2c_init(i2c1, 100 * 1000);
-    	gpio_set_function(18, GPIO_FUNC_I2C);
-    	gpio_set_function(19, GPIO_FUNC_I2C);
-    	gpio_pull_up(18);
-    	gpio_pull_up(19);
+    gpio_set_function(18, GPIO_FUNC_I2C);
+    gpio_set_function(19, GPIO_FUNC_I2C);
+    gpio_pull_up(18);
+    gpio_pull_up(19);
     // Make the I2C pins available to picotool
     //bi_decl(bi_2pins_with_func(PICO_DEFAULT_I2C_SDA_PIN, PICO_DEFAULT_I2C_SCL_PIN, GPIO_FUNC_I2C));
 
-    	_lcd_init();
+    _lcd_init();
 }
 
 bool reserved_addr(uint8_t addr) {
@@ -170,7 +179,27 @@ void	lcd_scan(void) {
         printf(addr % 16 == 15 ? "\n" : "  ");
     }
     printf("Done.\n");
-
 #endif
+}
 
+void    lcd_on(void) {
+    if (__lcd_inuse)
+        return;
+    __lcd_inuse = 1;
+    lcd_init();
+}
+
+void    lcd_off(void) {
+    if (!__lcd_inuse)
+        return;
+    lcd_clear();
+    __lcd_inuse = 0;
+}
+
+int		lcd_toggle(void) {
+    if (__lcd_inuse)
+        lcd_off();
+    else
+        lcd_on();
+    return __lcd_inuse;
 }

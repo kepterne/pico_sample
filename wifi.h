@@ -30,4 +30,6 @@ typedef struct TCP_CLIENT_T_ {
 extern	int				current_ap;
 #endif
 
+void	LoopWifi(void);
+
 #endif

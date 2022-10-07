@@ -25,7 +25,10 @@
 
 typedef	struct {
 	char		magic[128];
+	char		name[64];
 	int			echo;
+	int			lcdon;
+	int			analogon;
 	int			muxports[5];
 	int			ports[4];
 	char		hostadr[32];
@@ -38,8 +41,11 @@ typedef	struct {
 #ifdef	main_c
 		char		SharedSecret[64] = "canEliffilEnac";
 		StoredConfig	config = {
-			"pico_car_2",			// DEGERLERDE DEGISIKLIK YAPINCA BUT STRING'I DE DEGISTIRIN
+			"pico_car_1",			// DEGERLERDE DEGISIKLIK YAPINCA BUT STRING'I DE DEGISTIRIN
+			"pico_can",
 			1,						// echo on
+			1,						// lcd on
+			1,
 			{10, 11, 12, 13, 14}, 	// RELAY PIN'LERI + KONTROL PINI
 			{21, 20, 19, 18},		// ANALOG MUX PINLERI, ADC2'DEN OKUNUYOR
 			"173.255.229.145",
